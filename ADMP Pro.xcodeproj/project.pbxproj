@@ -7,18 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98052D6229F0E8110006E1D2 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98052D6129F0E8110006E1D2 /* SubscriptionView.swift */; };
 		985DF9AD29EFE49700FB0AD5 /* ADMP_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */; };
 		985DF9AF29EFE49700FB0AD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DF9AE29EFE49700FB0AD5 /* ContentView.swift */; };
 		985DF9B129EFE49900FB0AD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985DF9B029EFE49900FB0AD5 /* Assets.xcassets */; };
 		985DF9B429EFE49900FB0AD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985DF9B329EFE49900FB0AD5 /* Preview Assets.xcassets */; };
+		986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC12C29F07FBE0061AB7E /* SearchView.swift */; };
+		986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC12E29F0814D0061AB7E /* AdvertisingView.swift */; };
+		986CC13129F0827B0061AB7E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC13029F0827B0061AB7E /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		98052D6129F0E8110006E1D2 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 		985DF9A929EFE49700FB0AD5 /* ADMP Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADMP Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADMP_ProApp.swift; sourceTree = "<group>"; };
 		985DF9AE29EFE49700FB0AD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		985DF9B029EFE49900FB0AD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		985DF9B329EFE49900FB0AD5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		986CC12C29F07FBE0061AB7E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		986CC12E29F0814D0061AB7E /* AdvertisingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingView.swift; sourceTree = "<group>"; };
+		986CC13029F0827B0061AB7E /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		9889124429F042080077FFE8 /* ADMP-Pro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ADMP-Pro-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +61,12 @@
 			isa = PBXGroup;
 			children = (
 				985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */,
-				985DF9AE29EFE49700FB0AD5 /* ContentView.swift */,
+				986CC12929F07E5C0061AB7E /* Service */,
+				986CC12629F07E3A0061AB7E /* Model */,
+				986CC12829F07E520061AB7E /* View */,
+				986CC12729F07E480061AB7E /* ViewModel */,
 				985DF9B029EFE49900FB0AD5 /* Assets.xcassets */,
+				9889124429F042080077FFE8 /* ADMP-Pro-Info.plist */,
 				985DF9B229EFE49900FB0AD5 /* Preview Content */,
 			);
 			path = "ADMP Pro";
@@ -65,6 +78,39 @@
 				985DF9B329EFE49900FB0AD5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		986CC12629F07E3A0061AB7E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		986CC12729F07E480061AB7E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		986CC12829F07E520061AB7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				985DF9AE29EFE49700FB0AD5 /* ContentView.swift */,
+				986CC12C29F07FBE0061AB7E /* SearchView.swift */,
+				986CC12E29F0814D0061AB7E /* AdvertisingView.swift */,
+				986CC13029F0827B0061AB7E /* AccountView.swift */,
+				98052D6129F0E8110006E1D2 /* SubscriptionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		986CC12929F07E5C0061AB7E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +184,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				985DF9AF29EFE49700FB0AD5 /* ContentView.swift in Sources */,
+				986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */,
 				985DF9AD29EFE49700FB0AD5 /* ADMP_ProApp.swift in Sources */,
+				986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */,
+				986CC13129F0827B0061AB7E /* AccountView.swift in Sources */,
+				98052D6229F0E8110006E1D2 /* SubscriptionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +320,7 @@
 				DEVELOPMENT_TEAM = Q4F9FYJ2D7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ADMP-Pro-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ADMP Pro";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -304,6 +355,7 @@
 				DEVELOPMENT_TEAM = Q4F9FYJ2D7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ADMP-Pro-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ADMP Pro";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
