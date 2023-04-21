@@ -17,7 +17,7 @@ struct SearchView: View {
 		if queryString.isEmpty {
 			return goods
 		} else {
-			return goods.filter{ $0.lowercased().contains(queryString) }
+			return goods.filter{ $0.lowercased().contains(queryString.lowercased()) }
 		}
 	}
 	
@@ -35,9 +35,9 @@ struct SearchView: View {
 					}
 				}
 			}
-			.navigationTitle("Рекламные ставки")
+			.navigationTitle("Стакан цен")
 		}
-		.searchable(text: $queryString, prompt: "Наименование товара")
+		.searchable(text: $queryString, prompt: "Ключевое слово")
 	}
 }
 

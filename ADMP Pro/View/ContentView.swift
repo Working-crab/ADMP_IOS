@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
 	
-	@State private var selectedTabIndex = 1
+	@State private var selectedTab = 1
 
 	var body: some View {
-		TabView(selection: $selectedTabIndex) {
+		TabView(selection: $selectedTab) {
 			SearchView()
 				.tag(1)
 				.tabItem {
@@ -23,8 +23,8 @@ struct ContentView: View {
 				.tag(2)
 				.tabItem {
 					Image(systemName: "list.bullet.rectangle.fill")
-					Text("Рекламные компании")
- 				}
+					Text("Мои компании")
+				}
 			AccountView()
 				.tag(3)
 				.tabItem {

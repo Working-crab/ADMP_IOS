@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9803DCAA29F2D19E00885C63 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCA929F2D19E00885C63 /* AppSettings.swift */; };
+		9803DCB029F2DCD600885C63 /* GenerateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCAF29F2DCD600885C63 /* GenerateProductView.swift */; };
+		9803DCB229F2E12400885C63 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCB129F2E12400885C63 /* ProductModel.swift */; };
+		9803DCB429F2ED4E00885C63 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCB329F2ED4E00885C63 /* AccountSettingsView.swift */; };
 		98052D6229F0E8110006E1D2 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98052D6129F0E8110006E1D2 /* SubscriptionView.swift */; };
 		985DF9AD29EFE49700FB0AD5 /* ADMP_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */; };
 		985DF9AF29EFE49700FB0AD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DF9AE29EFE49700FB0AD5 /* ContentView.swift */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9803DCA929F2D19E00885C63 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		9803DCAF29F2DCD600885C63 /* GenerateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateProductView.swift; sourceTree = "<group>"; };
+		9803DCB129F2E12400885C63 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		9803DCB329F2ED4E00885C63 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		98052D6129F0E8110006E1D2 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 		985DF9A929EFE49700FB0AD5 /* ADMP Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADMP Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADMP_ProApp.swift; sourceTree = "<group>"; };
@@ -41,6 +49,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9803DCA829F2D18900885C63 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9803DCA929F2D19E00885C63 /* AppSettings.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9803DCAB29F2D9C000885C63 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				986CC12C29F07FBE0061AB7E /* SearchView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		9803DCAC29F2DA2500885C63 /* AdvertisingView */ = {
+			isa = PBXGroup;
+			children = (
+				986CC12E29F0814D0061AB7E /* AdvertisingView.swift */,
+			);
+			path = AdvertisingView;
+			sourceTree = "<group>";
+		};
+		9803DCAD29F2DA4C00885C63 /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				986CC13029F0827B0061AB7E /* AccountView.swift */,
+				98052D6129F0E8110006E1D2 /* SubscriptionView.swift */,
+				9803DCB329F2ED4E00885C63 /* AccountSettingsView.swift */,
+			);
+			path = AccountView;
+			sourceTree = "<group>";
+		};
+		9803DCAE29F2DB1200885C63 /* GenerateProductView */ = {
+			isa = PBXGroup;
+			children = (
+				9803DCAF29F2DCD600885C63 /* GenerateProductView.swift */,
+			);
+			path = GenerateProductView;
+			sourceTree = "<group>";
+		};
 		985DF9A029EFE49700FB0AD5 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +112,7 @@
 			children = (
 				985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */,
 				986CC12929F07E5C0061AB7E /* Service */,
+				9803DCA829F2D18900885C63 /* Utils */,
 				986CC12629F07E3A0061AB7E /* Model */,
 				986CC12829F07E520061AB7E /* View */,
 				986CC12729F07E480061AB7E /* ViewModel */,
@@ -83,6 +134,7 @@
 		986CC12629F07E3A0061AB7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9803DCB129F2E12400885C63 /* ProductModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,10 +150,10 @@
 			isa = PBXGroup;
 			children = (
 				985DF9AE29EFE49700FB0AD5 /* ContentView.swift */,
-				986CC12C29F07FBE0061AB7E /* SearchView.swift */,
-				986CC12E29F0814D0061AB7E /* AdvertisingView.swift */,
-				986CC13029F0827B0061AB7E /* AccountView.swift */,
-				98052D6129F0E8110006E1D2 /* SubscriptionView.swift */,
+				9803DCAB29F2D9C000885C63 /* SearchView */,
+				9803DCAC29F2DA2500885C63 /* AdvertisingView */,
+				9803DCAE29F2DB1200885C63 /* GenerateProductView */,
+				9803DCAD29F2DA4C00885C63 /* AccountView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +237,10 @@
 			files = (
 				985DF9AF29EFE49700FB0AD5 /* ContentView.swift in Sources */,
 				986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */,
+				9803DCAA29F2D19E00885C63 /* AppSettings.swift in Sources */,
+				9803DCB429F2ED4E00885C63 /* AccountSettingsView.swift in Sources */,
+				9803DCB029F2DCD600885C63 /* GenerateProductView.swift in Sources */,
+				9803DCB229F2E12400885C63 /* ProductModel.swift in Sources */,
 				985DF9AD29EFE49700FB0AD5 /* ADMP_ProApp.swift in Sources */,
 				986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */,
 				986CC13129F0827B0061AB7E /* AccountView.swift in Sources */,
