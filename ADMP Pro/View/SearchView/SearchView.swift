@@ -13,12 +13,34 @@ struct SearchView: View {
 	
 	@State private var keyword: String = ""
 	@State private var resultText: String = ""
+	@State private var isLoading = false
+	
+	private func searchProduct() {
+		Task {
+			do {
+				isLoading = true
+				let data = try await viewModel.searchProduct(for: keyword)
+				isLoading = false
+				resultText = data.data
+			} catch {
+				print(error)
+			}
+		}
+	}
 	
 	var body: some View {
 		NavigationStack {
-			ScrollView(showsIndicators: false) {
-				VStack(spacing: 20) {
-					Text(resultText)
+			GeometryReader { geometry in
+				ScrollView(showsIndicators: false) {
+					VStack(spacing: 20) {
+						if isLoading {
+							ProgressView()
+								.frame(width: geometry.size.width)
+								.frame(minHeight: geometry.size.height)
+						} else {
+							Text(resultText)
+						}
+					}
 				}
 			}
 			.padding(.horizontal)
@@ -26,14 +48,7 @@ struct SearchView: View {
 		}
 		.searchable(text: $keyword, prompt: "Ключевое слово")
 		.onSubmit(of: .search) {
-			Task {
-				do {
-					let data = try await viewModel.searchProduct(for: keyword)
-					resultText = data.data
-				} catch {
-					print(error)
-				}
-			}
+			searchProduct()
 		}
 	}
 }
