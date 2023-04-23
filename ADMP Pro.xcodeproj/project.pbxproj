@@ -20,6 +20,7 @@
 		986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC12E29F0814D0061AB7E /* AdvertisingView.swift */; };
 		986CC13129F0827B0061AB7E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC13029F0827B0061AB7E /* AccountView.swift */; };
 		98BA751C29F56D7E00CF394F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA751B29F56D7E00CF394F /* SearchViewModel.swift */; };
+		98BA752229F592D200CF394F /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 98BA752129F592D200CF394F /* SPIndicator */; };
 		98C58B4229F53790009659F6 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */; };
 		98C58B4429F53917009659F6 /* QueryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4329F53917009659F6 /* QueryProtocol.swift */; };
 		98C58B4629F53BB6009659F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4529F53BB6009659F6 /* NetworkService.swift */; };
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98BA752229F592D200CF394F /* SPIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +201,9 @@
 			dependencies = (
 			);
 			name = "ADMP Pro";
+			packageProductDependencies = (
+				98BA752129F592D200CF394F /* SPIndicator */,
+			);
 			productName = "ADMP Pro";
 			productReference = 985DF9A929EFE49700FB0AD5 /* ADMP Pro.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +232,9 @@
 				Base,
 			);
 			mainGroup = 985DF9A029EFE49700FB0AD5;
+			packageReferences = (
+				98BA752029F592D200CF394F /* XCRemoteSwiftPackageReference "SPIndicator" */,
+			);
 			productRefGroup = 985DF9AA29EFE49700FB0AD5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -481,6 +489,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98BA752029F592D200CF394F /* XCRemoteSwiftPackageReference "SPIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPIndicator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98BA752129F592D200CF394F /* SPIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98BA752029F592D200CF394F /* XCRemoteSwiftPackageReference "SPIndicator" */;
+			productName = SPIndicator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 985DF9A129EFE49700FB0AD5 /* Project object */;
 }
