@@ -19,6 +19,11 @@
 		986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC12C29F07FBE0061AB7E /* SearchView.swift */; };
 		986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC12E29F0814D0061AB7E /* AdvertisingView.swift */; };
 		986CC13129F0827B0061AB7E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC13029F0827B0061AB7E /* AccountView.swift */; };
+		98C58B4229F53790009659F6 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */; };
+		98C58B4429F53917009659F6 /* QueryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4329F53917009659F6 /* QueryProtocol.swift */; };
+		98C58B4629F53BB6009659F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4529F53BB6009659F6 /* NetworkService.swift */; };
+		98C58B4A29F54862009659F6 /* GPTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4929F54862009659F6 /* GPTModel.swift */; };
+		98C58B4C29F54AF7009659F6 /* GPTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		986CC12E29F0814D0061AB7E /* AdvertisingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingView.swift; sourceTree = "<group>"; };
 		986CC13029F0827B0061AB7E /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		9889124429F042080077FFE8 /* ADMP-Pro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ADMP-Pro-Info.plist"; sourceTree = SOURCE_ROOT; };
+		98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		98C58B4329F53917009659F6 /* QueryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryProtocol.swift; sourceTree = "<group>"; };
+		98C58B4529F53BB6009659F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		98C58B4929F54862009659F6 /* GPTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTModel.swift; sourceTree = "<group>"; };
+		98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +144,9 @@
 		986CC12629F07E3A0061AB7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				98C58B4329F53917009659F6 /* QueryProtocol.swift */,
 				9803DCB129F2E12400885C63 /* ProductModel.swift */,
+				98C58B4929F54862009659F6 /* GPTModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,6 +154,7 @@
 		986CC12729F07E480061AB7E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -161,6 +174,8 @@
 		986CC12929F07E5C0061AB7E /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */,
+				98C58B4529F53BB6009659F6 /* NetworkService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -237,10 +252,15 @@
 			files = (
 				985DF9AF29EFE49700FB0AD5 /* ContentView.swift in Sources */,
 				986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */,
+				98C58B4429F53917009659F6 /* QueryProtocol.swift in Sources */,
+				98C58B4C29F54AF7009659F6 /* GPTViewModel.swift in Sources */,
 				9803DCAA29F2D19E00885C63 /* AppSettings.swift in Sources */,
 				9803DCB429F2ED4E00885C63 /* AccountSettingsView.swift in Sources */,
+				98C58B4629F53BB6009659F6 /* NetworkService.swift in Sources */,
+				98C58B4229F53790009659F6 /* NetworkServiceProtocol.swift in Sources */,
 				9803DCB029F2DCD600885C63 /* GenerateProductView.swift in Sources */,
 				9803DCB229F2E12400885C63 /* ProductModel.swift in Sources */,
+				98C58B4A29F54862009659F6 /* GPTModel.swift in Sources */,
 				985DF9AD29EFE49700FB0AD5 /* ADMP_ProApp.swift in Sources */,
 				986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */,
 				986CC13129F0827B0061AB7E /* AccountView.swift in Sources */,

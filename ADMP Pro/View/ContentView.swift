@@ -25,8 +25,14 @@ struct ContentView: View {
 					Image(systemName: "list.bullet.rectangle.fill")
 					Text("Мои компании")
 				}
-			AccountView()
+			GenerateProductView()
 				.tag(3)
+				.tabItem {
+					Image(systemName: "doc.badge.plus")
+					Text("Генерация карты")
+				}
+			AccountView()
+				.tag(4)
 				.tabItem {
 					Image(systemName: "person.circle.fill")
 					Text("Мой аккаунт")
