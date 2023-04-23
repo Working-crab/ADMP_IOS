@@ -12,8 +12,10 @@ struct GenerateProductView: View {
 	
 	@State private var keyword: String = ""
 	@State private var resultText: String = ""
+	@State private var errorMessage: String = ""
 	@State private var isLoading = false
 	@State private var alertIsShowed = false
+	@State private var errorAlertIsShowed = false
 	
 	@StateObject private var viewModel = GPTViewModel(networkService: NetworkService())
 	
@@ -25,7 +27,9 @@ struct GenerateProductView: View {
 				isLoading = false
 				resultText = data.data
 			} catch {
-				print(error)
+				isLoading = false
+				errorMessage = error.localizedDescription
+				errorAlertIsShowed = true
 			}
 		}
 	}
@@ -40,7 +44,7 @@ struct GenerateProductView: View {
 								if isLoading {
 									VStack {
 										ProgressView()
-										Text("Генерируем карточку 😊")
+										Text("Генерируем вашу карточку 😊")
 									}
 									.frame(width: geometry.size.width)
 									.frame(minHeight: geometry.size.height)
@@ -57,15 +61,6 @@ struct GenerateProductView: View {
 												.background(Color.init(.systemBlue))
 												.clipShape(Capsule())
 										}
-										.SPIndicator(
-												isPresent: $alertIsShowed,
-												title: "Скопировано",
-												duration: 2,
-												presentSide: .top,
-												dismissByDrag: true,
-												preset: .done,
-												haptic: .success
-										)
 									}
 								}
 							}
@@ -87,6 +82,25 @@ struct GenerateProductView: View {
 			.onSubmit(of: .text) {
 				generateProductCard()
 			}
+			.SPIndicator(
+			isPresent: $errorAlertIsShowed,
+			title: "Ошибка сервера",
+			message: errorMessage,
+			duration: 2,
+			presentSide: .top,
+			dismissByDrag: true,
+			preset: .error,
+			haptic: .error
+			)
+			.SPIndicator(
+			isPresent: $alertIsShowed,
+			title: "Скопировано",
+			duration: 2,
+			presentSide: .top,
+			dismissByDrag: true,
+			preset: .done,
+			haptic: .success
+			)
 		}
 	}
 }

@@ -33,8 +33,10 @@ struct SubscriptionView: View {
 								Spacer()
 								if sub == "Basic" {
 									Text("Бесплатно")
+								} else if sub == "Pro" {
+									Text("400 Руб.")
 								} else {
-									Text("200 Руб.")
+									Text("800 Руб.")
 								}
 							}
 						}

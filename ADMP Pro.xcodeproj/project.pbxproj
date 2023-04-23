@@ -10,7 +10,6 @@
 		9803DCAA29F2D19E00885C63 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCA929F2D19E00885C63 /* AppSettings.swift */; };
 		9803DCB029F2DCD600885C63 /* GenerateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCAF29F2DCD600885C63 /* GenerateProductView.swift */; };
 		9803DCB229F2E12400885C63 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCB129F2E12400885C63 /* ProductModel.swift */; };
-		9803DCB429F2ED4E00885C63 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCB329F2ED4E00885C63 /* AccountSettingsView.swift */; };
 		98052D6229F0E8110006E1D2 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98052D6129F0E8110006E1D2 /* SubscriptionView.swift */; };
 		985DF9AD29EFE49700FB0AD5 /* ADMP_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */; };
 		985DF9AF29EFE49700FB0AD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DF9AE29EFE49700FB0AD5 /* ContentView.swift */; };
@@ -32,7 +31,6 @@
 		9803DCA929F2D19E00885C63 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		9803DCAF29F2DCD600885C63 /* GenerateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateProductView.swift; sourceTree = "<group>"; };
 		9803DCB129F2E12400885C63 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
-		9803DCB329F2ED4E00885C63 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		98052D6129F0E8110006E1D2 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 		985DF9A929EFE49700FB0AD5 /* ADMP Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADMP Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADMP_ProApp.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			children = (
 				986CC13029F0827B0061AB7E /* AccountView.swift */,
 				98052D6129F0E8110006E1D2 /* SubscriptionView.swift */,
-				9803DCB329F2ED4E00885C63 /* AccountSettingsView.swift */,
 			);
 			path = AccountView;
 			sourceTree = "<group>";
@@ -267,7 +264,6 @@
 				98C58B4429F53917009659F6 /* QueryProtocol.swift in Sources */,
 				98C58B4C29F54AF7009659F6 /* GPTViewModel.swift in Sources */,
 				9803DCAA29F2D19E00885C63 /* AppSettings.swift in Sources */,
-				9803DCB429F2ED4E00885C63 /* AccountSettingsView.swift in Sources */,
 				98C58B4629F53BB6009659F6 /* NetworkService.swift in Sources */,
 				98C58B4229F53790009659F6 /* NetworkServiceProtocol.swift in Sources */,
 				9803DCB029F2DCD600885C63 /* GenerateProductView.swift in Sources */,

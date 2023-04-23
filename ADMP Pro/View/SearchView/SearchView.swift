@@ -39,6 +39,16 @@ struct SearchView: View {
 								.frame(minHeight: geometry.size.height)
 						} else {
 							Text(resultText)
+							if resultText.isEmpty {
+								VStack {
+									Text("👨‍⚖️")
+										.font(.system(size: 50))
+									Text("Здесь будут отображаться рекламные ставки товара")
+										.multilineTextAlignment(.center)
+								}
+								.frame(width: geometry.size.width)
+								.frame(minHeight: geometry.size.height - 50)
+							}
 						}
 					}
 				}
@@ -46,7 +56,7 @@ struct SearchView: View {
 			.padding(.horizontal)
 			.navigationTitle("Стакан цен")
 		}
-		.searchable(text: $keyword, prompt: "Ключевое слово")
+		.searchable(text: $keyword, placement: .navigationBarDrawer(displayMode: .always), prompt: "Ключевое слово")
 		.onSubmit(of: .search) {
 			searchProduct()
 		}

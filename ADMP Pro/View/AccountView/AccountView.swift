@@ -10,6 +10,8 @@ import Charts
 
 struct AccountView: View {
 	
+	@State private var showingSettingsSheet = false
+	
 	var body: some View {
 		NavigationStack {
 			VStack {
@@ -59,7 +61,9 @@ struct AccountView: View {
 										Text("02.04.2023")
 									}
 								}
-								Button {} label: {
+								Button {
+									showingSettingsSheet.toggle()
+								} label: {
 									Text("Полная история")
 										.foregroundColor(.white)
 										.padding(10)
@@ -79,11 +83,25 @@ struct AccountView: View {
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
 				ToolbarItem(placement: .navigationBarTrailing) {
-					NavigationLink(destination: AccountSettingsView()) {
-						Image(systemName: "gearshape")
+					Menu {
+						Button {
+							showingSettingsSheet.toggle()
+						} label: {
+							HStack {
+								Text("Настройки профиля")
+								Spacer()
+								Image(systemName: "gearshape")
+							}
+						}
+					} label: {
+						Image(systemName: "ellipsis")
+							.foregroundColor(.blue)
 					}
 				}
 			}
+		}
+		.sheet(isPresented: $showingSettingsSheet) {
+			SheetView()
 		}
 	}
 }
@@ -108,6 +126,39 @@ struct HeaderView: View {
 			}
 		}
 		.frame(maxWidth: .infinity, alignment: .leading)
+	}
+}
+
+struct SheetView: View {
+	@Environment(\.dismiss) var dismiss
+	
+	@ObservedObject var settings = AppSettings.shared
+
+	var body: some View {
+		NavigationStack {
+			ScrollView {
+				VStack {
+					VStack {
+						Text("Токен")
+							.bold()
+						TextField("Токен Wilberries", text: settings.$wbToken)
+							.padding(10)
+							.background(Color.init(.systemGray6))
+							.clipShape(Capsule())
+					}
+				}
+				.frame(width: .infinity, alignment: .leading)
+			}
+			.padding(.horizontal)
+			.toolbar {
+				ToolbarItem {
+					Button("Готово") {
+						dismiss()
+					}
+				}
+			}
+		}
+		.navigationTitle("Настройки")
 	}
 }
 

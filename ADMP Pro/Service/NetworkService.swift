@@ -30,19 +30,16 @@ class NetworkService: NetworkServiceProtocol {
 		let jsonData = try jsonEncoder.encode(query)
 		request.httpBody = jsonData
 		
-		do {
-			let (data, response) = try await URLSession.shared.data(for: request)
-			guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-				throw NetworkError.invalidResponse
-			}
-			
-			let jsonDecoder = JSONDecoder()
-			let responseData = try jsonDecoder.decode(responseType, from: data)
-				
-			return responseData
-		} catch {
-			throw NetworkError.requestFailed
+		let (data, response) = try await URLSession.shared.data(for: request)
+	
+		guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+			throw NetworkError.invalidResponse
 		}
+		
+		let jsonDecoder = JSONDecoder()
+		let responseData = try jsonDecoder.decode(responseType, from: data)
+			
+		return responseData
 	}
 }
 

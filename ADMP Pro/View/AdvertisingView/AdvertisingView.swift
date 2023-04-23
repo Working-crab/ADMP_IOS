@@ -15,7 +15,10 @@ struct AdvertisingView: View {
 		NavigationStack {
 			VStack(spacing: 10) {
 				if appSettings.wbToken.isEmpty {
-					Text("Ой-ой 😓")
+					Text("😓")
+						.font(.system(size: 50))
+						.padding(.bottom, -10)
+					Text("Ой-ой")
 						.font(.system(size: 20, weight: .semibold))
 					Text("Чтобы просматривать свои рекламные компании введите токен Wilberries в настройках аккаунта")
 						.multilineTextAlignment(.center)
@@ -31,6 +34,7 @@ struct AdvertisingView: View {
 					}
 				}
 			}
+			.padding(.horizontal)
 			.navigationTitle("Рекламные компании")
 		}
 	}
