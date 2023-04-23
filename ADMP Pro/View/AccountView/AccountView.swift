@@ -10,34 +10,13 @@ import Charts
 
 struct AccountView: View {
 	
-	var data: [Product] = [
-		.init(name: "Платье", salesCount: 14),
-		.init(name: "Шарф", salesCount: 25),
-		.init(name: "Галстук", salesCount: 20),
-		.init(name: "Чехол для IPhone", salesCount: 13),
-		.init(name: "Кроссовки Nike", salesCount: 25),
-		.init(name: "Жалюзи", salesCount: 34),
-		.init(name: "AirPods Pro", salesCount: 27)
-	]
-	
 	var body: some View {
 		NavigationStack {
 			VStack {
 				Section {
 					ScrollView(showsIndicators: false) {
 						VStack(alignment: .leading, spacing: 15) {
-							Text("График продаж")
-								.font(.system(size: 18, weight: .semibold))
-							Chart {
-									ForEach(data) { product in
-											BarMark(
-												x: .value("Товар", product.name),
-												y: .value("Total Count", product.salesCount)
-											)
-									}
-							}
-							.frame(height: 300)
-							
+
 							VStack(alignment: .leading) {
 								Text("Сэкономлено")
 									.font(.system(size: 18, weight: .semibold))

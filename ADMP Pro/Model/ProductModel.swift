@@ -7,14 +7,11 @@
 
 import Foundation
 
-struct Product: Identifiable {
-	var id = UUID()
-	var name: String
-	var salesCount: Int
-	
-	init(id: UUID = UUID(), name: String, salesCount: Int) {
-		self.id = id
-		self.name = name
-		self.salesCount = salesCount
-	}
+struct ProductRequest: Query {
+	var keyword: String
 }
+
+struct ProductResponse: Query {
+	var data: String
+}
+

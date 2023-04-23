@@ -13,7 +13,7 @@ struct GenerateProductView: View {
 	@State private var resultText: String = ""
 	@State private var isLoading = false
 	
-	@StateObject private var gptViewModel = GPTViewModel(networkService: NetworkService())
+	@StateObject private var viewModel = GPTViewModel(networkService: NetworkService())
 	
 	var body: some View {
 		NavigationStack {
@@ -25,7 +25,7 @@ struct GenerateProductView: View {
 					Task {
 						do {
 							isLoading = true
-							let data = try await gptViewModel.generateProductCard(for: keyword)
+							let data = try await viewModel.generateProductCard(for: keyword)
 							isLoading = false
 							resultText = data.data
 						} catch {
@@ -36,11 +36,13 @@ struct GenerateProductView: View {
 					Text("Сгенерировать")
 				}
 				if isLoading {
+					Text("Идет обработка вашего запроса...")
 					ProgressView()
 				} else {
 					Text(resultText)
 				}
 			}
+			.padding()
 		}
 	}
 }

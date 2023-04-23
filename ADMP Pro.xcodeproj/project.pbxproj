@@ -19,6 +19,7 @@
 		986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC12C29F07FBE0061AB7E /* SearchView.swift */; };
 		986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC12E29F0814D0061AB7E /* AdvertisingView.swift */; };
 		986CC13129F0827B0061AB7E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC13029F0827B0061AB7E /* AccountView.swift */; };
+		98BA751C29F56D7E00CF394F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA751B29F56D7E00CF394F /* SearchViewModel.swift */; };
 		98C58B4229F53790009659F6 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */; };
 		98C58B4429F53917009659F6 /* QueryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4329F53917009659F6 /* QueryProtocol.swift */; };
 		98C58B4629F53BB6009659F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4529F53BB6009659F6 /* NetworkService.swift */; };
@@ -41,6 +42,7 @@
 		986CC12E29F0814D0061AB7E /* AdvertisingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingView.swift; sourceTree = "<group>"; };
 		986CC13029F0827B0061AB7E /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		9889124429F042080077FFE8 /* ADMP-Pro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ADMP-Pro-Info.plist"; sourceTree = SOURCE_ROOT; };
+		98BA751B29F56D7E00CF394F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		98C58B4329F53917009659F6 /* QueryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryProtocol.swift; sourceTree = "<group>"; };
 		98C58B4529F53BB6009659F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */,
+				98BA751B29F56D7E00CF394F /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			files = (
 				985DF9AF29EFE49700FB0AD5 /* ContentView.swift in Sources */,
 				986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */,
+				98BA751C29F56D7E00CF394F /* SearchViewModel.swift in Sources */,
 				98C58B4429F53917009659F6 /* QueryProtocol.swift in Sources */,
 				98C58B4C29F54AF7009659F6 /* GPTViewModel.swift in Sources */,
 				9803DCAA29F2D19E00885C63 /* AppSettings.swift in Sources */,

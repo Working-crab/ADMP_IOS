@@ -9,35 +9,32 @@ import SwiftUI
 
 struct SearchView: View {
 	
-	let goods = ["Чайник","Чехол","Платье","Подставка для ноутбука","Часы","Коврик для мыши","Туфли"]
+	@StateObject private var viewModel = SearchViewModel(service: NetworkService())
 	
-	@State private var queryString: String = ""
-	
-	var searchResults: [String] {
-		if queryString.isEmpty {
-			return goods
-		} else {
-			return goods.filter{ $0.lowercased().contains(queryString.lowercased()) }
-		}
-	}
+	@State private var keyword: String = ""
+	@State private var resultText: String = ""
 	
 	var body: some View {
 		NavigationStack {
 			ScrollView(showsIndicators: false) {
 				VStack(spacing: 20) {
-					ForEach(searchResults, id: \.self) { name in
-						VStack {
-							Image(systemName: "shippingbox.fill")
-								.resizable()
-								.frame(width: 80, height: 80)
-							Text(name)
-						}
-					}
+					Text(resultText)
 				}
 			}
+			.padding(.horizontal)
 			.navigationTitle("Стакан цен")
 		}
-		.searchable(text: $queryString, prompt: "Ключевое слово")
+		.searchable(text: $keyword, prompt: "Ключевое слово")
+		.onSubmit(of: .search) {
+			Task {
+				do {
+					let data = try await viewModel.searchProduct(for: keyword)
+					resultText = data.data
+				} catch {
+					print(error)
+				}
+			}
+		}
 	}
 }
 
