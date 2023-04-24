@@ -11,28 +11,13 @@ import SPIndicator
 struct GenerateProductView: View {
 	
 	@State private var keyword: String = ""
-	@State private var resultText: String = ""
+//	@State private var resultText: String = ""
 	@State private var errorMessage: String = ""
 	@State private var isLoading = false
 	@State private var alertIsShowed = false
 	@State private var errorAlertIsShowed = false
 	
 	@StateObject private var viewModel = GPTViewModel(networkService: NetworkService())
-	
-	private func generateProductCard() {
-		Task {
-			do {
-				isLoading = true
-				let data = try await viewModel.generateProductCard(for: keyword)
-				isLoading = false
-				resultText = data.data
-			} catch {
-				isLoading = false
-				errorMessage = error.localizedDescription
-				errorAlertIsShowed = true
-			}
-		}
-	}
 	
 	var body: some View {
 		NavigationStack {
@@ -41,26 +26,33 @@ struct GenerateProductView: View {
 					GeometryReader { geometry in
 						ScrollView(showsIndicators: false) {
 							VStack(alignment: .center, spacing: 15) {
-								if isLoading {
+								switch viewModel.state {
+								case .idle:
+									EmptyView()
+								case .loading:
 									VStack {
 										ProgressView()
 										Text("Генерируем вашу карточку 😊")
 									}
 									.frame(width: geometry.size.width)
 									.frame(minHeight: geometry.size.height)
-								} else {
-									Text(resultText)
-									if !resultText.isEmpty {
-										Button {
-											UIPasteboard.general.string = self.resultText
-											alertIsShowed = true
-										} label: {
-											Text("Скопировать")
-												.padding()
-												.foregroundColor(.white)
-												.background(Color.init(.systemBlue))
-												.clipShape(Capsule())
-										}
+								case .success(let response):
+									Text(response.data)
+									Button {
+										UIPasteboard.general.string = response.data
+										alertIsShowed = true
+									} label: {
+										Text("Скопировать")
+											.padding()
+											.foregroundColor(.white)
+											.background(Color.init(.systemBlue))
+											.clipShape(Capsule())
+									}
+								case .error(let error):
+									VStack {}
+									.onAppear {
+										errorMessage = error.localizedDescription
+										errorAlertIsShowed = true
 									}
 								}
 							}
@@ -80,7 +72,9 @@ struct GenerateProductView: View {
 			.padding(.horizontal)
 			.navigationTitle("Карточка товара")
 			.onSubmit(of: .text) {
-				generateProductCard()
+				Task {
+					await viewModel.generateProductCard(for: keyword)
+				}
 			}
 			.SPIndicator(
 			isPresent: $errorAlertIsShowed,
