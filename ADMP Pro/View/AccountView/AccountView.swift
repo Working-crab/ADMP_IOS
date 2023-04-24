@@ -130,10 +130,9 @@ struct HeaderView: View {
 }
 
 struct SheetView: View {
+	@EnvironmentObject var appSettings: AppSettings
 	@Environment(\.dismiss) var dismiss
 	
-	@ObservedObject var settings = AppSettings.shared
-
 	var body: some View {
 		NavigationStack {
 			ScrollView {
@@ -141,13 +140,12 @@ struct SheetView: View {
 					VStack {
 						Text("Токен")
 							.bold()
-						TextField("Токен Wilberries", text: settings.$wbToken)
+						TextField("Токен Wilberries", text: appSettings.$wbToken)
 							.padding(10)
 							.background(Color.init(.systemGray6))
 							.clipShape(Capsule())
 					}
 				}
-				.frame(width: .infinity, alignment: .leading)
 			}
 			.padding(.horizontal)
 			.toolbar {

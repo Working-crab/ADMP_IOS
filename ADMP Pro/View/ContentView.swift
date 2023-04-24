@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
 	
 	@State private var selectedTab = 1
+	private let appSettings = AppSettings()
 
 	var body: some View {
 		TabView(selection: $selectedTab) {
@@ -38,6 +39,7 @@ struct ContentView: View {
 					Text("Мой аккаунт")
 				}
 		}
+		.environmentObject(appSettings)
 	}
 }
 

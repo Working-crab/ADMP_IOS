@@ -9,8 +9,6 @@ import Foundation
 import SwiftUI
 
 class AppSettings: ObservableObject {
-	
-	@AppStorage("WBToken") var wbToken = ""
-	
-	static let shared = AppSettings(); private init() {}
+		
+	@AppStorage("WBToken") var wbToken: String = ""
 }

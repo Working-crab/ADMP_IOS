@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AdvertisingView: View {
 	
-	@ObservedObject private var appSettings = AppSettings.shared
+	@EnvironmentObject var appSettings: AppSettings
 	
 	var body: some View {
 		NavigationStack {
