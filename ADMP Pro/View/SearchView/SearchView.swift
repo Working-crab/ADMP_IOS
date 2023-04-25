@@ -6,48 +6,52 @@
 //
 
 import SwiftUI
+import SPIndicator
 
 struct SearchView: View {
 	
 	@StateObject private var viewModel = SearchViewModel(service: NetworkService())
 	
 	@State private var keyword: String = ""
-	@State private var resultText: String = ""
-	@State private var isLoading = false
-	
-	private func searchProduct() {
-		Task {
-			do {
-				isLoading = true
-				let data = try await viewModel.searchProduct(for: keyword)
-				isLoading = false
-				resultText = data.data
-			} catch {
-				print(error)
-			}
-		}
-	}
+	@State private var errorMessage: String = ""
+	@State private var errorAlertIsShowed = false
 	
 	var body: some View {
 		NavigationStack {
 			GeometryReader { geometry in
 				ScrollView(showsIndicators: false) {
 					VStack(spacing: 20) {
-						if isLoading {
+						switch viewModel.state {
+						case .idle:
+							VStack {
+								Text("👨‍⚖️")
+									.font(.system(size: 50))
+								Text("Здесь будут отображаться рекламные ставки товара")
+									.multilineTextAlignment(.center)
+							}
+							.frame(width: geometry.size.width)
+							.frame(minHeight: geometry.size.height - 50)
+						case .loading:
 							ProgressView()
 								.frame(width: geometry.size.width)
 								.frame(minHeight: geometry.size.height)
-						} else {
-							Text(resultText)
-							if resultText.isEmpty {
-								VStack {
-									Text("👨‍⚖️")
-										.font(.system(size: 50))
-									Text("Здесь будут отображаться рекламные ставки товара")
-										.multilineTextAlignment(.center)
-								}
-								.frame(width: geometry.size.width)
-								.frame(minHeight: geometry.size.height - 50)
+						case .success(let response):
+							Text(response.data)
+						case .error(let error):
+							VStack {
+								Text("😓")
+									.font(.system(size: 50))
+									.padding(.bottom, -10)
+								Text("Ой-ой")
+									.font(.system(size: 20, weight: .semibold))
+								Text("Кажется возникла ошибка на стороне сервера, попробуйте позже")
+									.multilineTextAlignment(.center)
+							}
+							.frame(width: geometry.size.width)
+							.frame(minHeight: geometry.size.height - 50)
+							.onAppear {
+								errorMessage = error.localizedDescription
+								errorAlertIsShowed = true
 							}
 						}
 					}
@@ -58,8 +62,20 @@ struct SearchView: View {
 		}
 		.searchable(text: $keyword, placement: .navigationBarDrawer(displayMode: .always), prompt: "Ключевое слово")
 		.onSubmit(of: .search) {
-			searchProduct()
+			Task {
+				await viewModel.searchProduct(for: keyword)
+			}
 		}
+		.SPIndicator(
+		isPresent: $errorAlertIsShowed,
+		title: "Ошибка сервера",
+		message: errorMessage,
+		duration: 2,
+		presentSide: .top,
+		dismissByDrag: true,
+		preset: .error,
+		haptic: .error
+		)
 	}
 }
 

@@ -11,10 +11,8 @@ import SPIndicator
 struct GenerateProductView: View {
 	
 	@State private var keyword: String = ""
-//	@State private var resultText: String = ""
-	@State private var errorMessage: String = ""
-	@State private var isLoading = false
 	@State private var alertIsShowed = false
+	@State private var errorMessage: String = ""
 	@State private var errorAlertIsShowed = false
 	
 	@StateObject private var viewModel = GPTViewModel(networkService: NetworkService())
@@ -53,6 +51,7 @@ struct GenerateProductView: View {
 									.onAppear {
 										errorMessage = error.localizedDescription
 										errorAlertIsShowed = true
+										print(error.localizedDescription)
 									}
 								}
 							}
@@ -72,7 +71,7 @@ struct GenerateProductView: View {
 			.padding(.horizontal)
 			.navigationTitle("Карточка товара")
 			.onSubmit(of: .text) {
-				Task {
+				Task.detached {
 					await viewModel.generateProductCard(for: keyword)
 				}
 			}

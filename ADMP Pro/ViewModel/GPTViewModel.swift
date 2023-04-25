@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class GPTViewModel: ObservableObject {
 	
 	private let networkService: NetworkServiceProtocol
@@ -23,7 +24,6 @@ class GPTViewModel: ObservableObject {
 		self.networkService = networkService
 	}
 	
-	@MainActor
 	func generateProductCard(for keyword: String) async {
 		self.state = .loading
 		do {
