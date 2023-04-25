@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-	func postJSON<T: Query>(for query: Query, to url: String, responseType: T.Type) async throws -> Query
+	func postJSON<T: Query>(for query: Query, to url: String, responseType: T.Type) async throws -> T
 }
 
 enum NetworkError: Error {

@@ -29,7 +29,7 @@ class GPTViewModel: ObservableObject {
 		do {
 			let query = GPTRequest(keyword: keyword)
 			let data = try await networkService.postJSON(for: query, to: "https://admp.pro/api/v1/gpt-generate-card-description", responseType: GPTResponse.self)
-			state = .success(data as! GPTResponse)
+			state = .success(data)
 		} catch {
 			state = .error(error)
 		}

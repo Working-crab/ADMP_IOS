@@ -17,7 +17,7 @@ class NetworkService: NetworkServiceProtocol {
 		self.session = URLSession(configuration: config)
 	}
 	
-	func postJSON<T:Query>(for query: Query, to url: String, responseType: T.Type) async throws -> Query {
+	func postJSON<T:Query>(for query: Query, to url: String, responseType: T.Type) async throws -> T {
 		guard let url = URL(string: url) else {
 			throw NetworkError.badURL
 		}
@@ -34,7 +34,7 @@ class NetworkService: NetworkServiceProtocol {
 			throw NetworkError.requestFailed
 		}
 		
-		let (data, response) = try await URLSession.shared.data(for: request)
+		let (data, response) = try await session.data(for: request)
 	
 		guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
 			throw NetworkError.invalidResponse

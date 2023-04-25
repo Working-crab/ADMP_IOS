@@ -29,7 +29,7 @@ class SearchViewModel: ObservableObject {
 		do {
 			let query = ProductRequest(keyword: keyword)
 			let response = try await service.postJSON(for: query, to: "https://admp.pro/api/v1/search-campaign-depth-of-market", responseType: ProductResponse.self)
-			self.state = .success(response as! ProductResponse)
+			self.state = .success(response)
 		} catch {
 			self.state = .error(error)
 		}
