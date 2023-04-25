@@ -77,7 +77,7 @@ struct GenerateProductView: View {
 			}
 			.SPIndicator(
 			isPresent: $errorAlertIsShowed,
-			title: "Ошибка сервера",
+			title: "Ошибка",
 			message: errorMessage,
 			duration: 2,
 			presentSide: .top,

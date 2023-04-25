@@ -26,9 +26,13 @@ class NetworkService: NetworkServiceProtocol {
 		request.httpMethod = "POST"
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 		
-		let jsonEncoder = JSONEncoder()
-		let jsonData = try jsonEncoder.encode(query)
-		request.httpBody = jsonData
+		do {
+			let jsonEncoder = JSONEncoder()
+			let jsonBody = try jsonEncoder.encode(query)
+			request.httpBody = jsonBody
+		} catch {
+			throw NetworkError.requestFailed
+		}
 		
 		let (data, response) = try await URLSession.shared.data(for: request)
 	
