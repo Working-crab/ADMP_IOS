@@ -9,43 +9,43 @@
 /* Begin PBXBuildFile section */
 		9803DCAA29F2D19E00885C63 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCA929F2D19E00885C63 /* AppSettings.swift */; };
 		9803DCB029F2DCD600885C63 /* GenerateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCAF29F2DCD600885C63 /* GenerateProductView.swift */; };
-		9803DCB229F2E12400885C63 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCB129F2E12400885C63 /* ProductModel.swift */; };
 		98052D6229F0E8110006E1D2 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98052D6129F0E8110006E1D2 /* SubscriptionView.swift */; };
 		985DF9AD29EFE49700FB0AD5 /* ADMP_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */; };
 		985DF9AF29EFE49700FB0AD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DF9AE29EFE49700FB0AD5 /* ContentView.swift */; };
 		985DF9B129EFE49900FB0AD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985DF9B029EFE49900FB0AD5 /* Assets.xcassets */; };
 		985DF9B429EFE49900FB0AD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985DF9B329EFE49900FB0AD5 /* Preview Assets.xcassets */; };
+		985F505229F97A9600E94026 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985F505129F97A9600E94026 /* NetworkError.swift */; };
+		985F505429F97B0500E94026 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985F505329F97B0500E94026 /* URLManager.swift */; };
 		986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC12C29F07FBE0061AB7E /* SearchView.swift */; };
 		986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC12E29F0814D0061AB7E /* AdvertisingView.swift */; };
 		986CC13129F0827B0061AB7E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC13029F0827B0061AB7E /* AccountView.swift */; };
 		98BA751C29F56D7E00CF394F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA751B29F56D7E00CF394F /* SearchViewModel.swift */; };
 		98BA752229F592D200CF394F /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 98BA752129F592D200CF394F /* SPIndicator */; };
 		98C58B4229F53790009659F6 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */; };
-		98C58B4429F53917009659F6 /* QueryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4329F53917009659F6 /* QueryProtocol.swift */; };
 		98C58B4629F53BB6009659F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4529F53BB6009659F6 /* NetworkService.swift */; };
-		98C58B4A29F54862009659F6 /* GPTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4929F54862009659F6 /* GPTModel.swift */; };
+		98C58B4A29F54862009659F6 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4929F54862009659F6 /* ProductModel.swift */; };
 		98C58B4C29F54AF7009659F6 /* GPTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9803DCA929F2D19E00885C63 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		9803DCAF29F2DCD600885C63 /* GenerateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateProductView.swift; sourceTree = "<group>"; };
-		9803DCB129F2E12400885C63 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		98052D6129F0E8110006E1D2 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 		985DF9A929EFE49700FB0AD5 /* ADMP Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADMP Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADMP_ProApp.swift; sourceTree = "<group>"; };
 		985DF9AE29EFE49700FB0AD5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		985DF9B029EFE49900FB0AD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		985DF9B329EFE49900FB0AD5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		985F505129F97A9600E94026 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		985F505329F97B0500E94026 /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		986CC12C29F07FBE0061AB7E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		986CC12E29F0814D0061AB7E /* AdvertisingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingView.swift; sourceTree = "<group>"; };
 		986CC13029F0827B0061AB7E /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		9889124429F042080077FFE8 /* ADMP-Pro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ADMP-Pro-Info.plist"; sourceTree = SOURCE_ROOT; };
 		98BA751B29F56D7E00CF394F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
-		98C58B4329F53917009659F6 /* QueryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryProtocol.swift; sourceTree = "<group>"; };
 		98C58B4529F53BB6009659F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		98C58B4929F54862009659F6 /* GPTModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTModel.swift; sourceTree = "<group>"; };
+		98C58B4929F54862009659F6 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */,
-				986CC12929F07E5C0061AB7E /* Service */,
+				986CC12929F07E5C0061AB7E /* Services */,
 				9803DCA829F2D18900885C63 /* Utils */,
 				986CC12629F07E3A0061AB7E /* Model */,
 				986CC12829F07E520061AB7E /* View */,
@@ -142,12 +142,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		985F505029F97A5E00E94026 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */,
+				98C58B4529F53BB6009659F6 /* NetworkService.swift */,
+				985F505129F97A9600E94026 /* NetworkError.swift */,
+				985F505329F97B0500E94026 /* URLManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		986CC12629F07E3A0061AB7E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				98C58B4329F53917009659F6 /* QueryProtocol.swift */,
-				9803DCB129F2E12400885C63 /* ProductModel.swift */,
-				98C58B4929F54862009659F6 /* GPTModel.swift */,
+				98C58B4929F54862009659F6 /* ProductModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,13 +182,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		986CC12929F07E5C0061AB7E /* Service */ = {
+		986CC12929F07E5C0061AB7E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */,
-				98C58B4529F53BB6009659F6 /* NetworkService.swift */,
+				985F505029F97A5E00E94026 /* Networking */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,17 +267,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				985DF9AF29EFE49700FB0AD5 /* ContentView.swift in Sources */,
+				985F505229F97A9600E94026 /* NetworkError.swift in Sources */,
 				986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */,
 				98BA751C29F56D7E00CF394F /* SearchViewModel.swift in Sources */,
-				98C58B4429F53917009659F6 /* QueryProtocol.swift in Sources */,
 				98C58B4C29F54AF7009659F6 /* GPTViewModel.swift in Sources */,
 				9803DCAA29F2D19E00885C63 /* AppSettings.swift in Sources */,
 				98C58B4629F53BB6009659F6 /* NetworkService.swift in Sources */,
 				98C58B4229F53790009659F6 /* NetworkServiceProtocol.swift in Sources */,
 				9803DCB029F2DCD600885C63 /* GenerateProductView.swift in Sources */,
-				9803DCB229F2E12400885C63 /* ProductModel.swift in Sources */,
-				98C58B4A29F54862009659F6 /* GPTModel.swift in Sources */,
+				98C58B4A29F54862009659F6 /* ProductModel.swift in Sources */,
 				985DF9AD29EFE49700FB0AD5 /* ADMP_ProApp.swift in Sources */,
+				985F505429F97B0500E94026 /* URLManager.swift in Sources */,
 				986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */,
 				986CC13129F0827B0061AB7E /* AccountView.swift in Sources */,
 				98052D6229F0E8110006E1D2 /* SubscriptionView.swift in Sources */,

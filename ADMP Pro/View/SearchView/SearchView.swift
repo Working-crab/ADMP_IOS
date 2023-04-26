@@ -18,50 +18,56 @@ struct SearchView: View {
 	
 	var body: some View {
 		NavigationStack {
-			GeometryReader { geometry in
-				ScrollView(showsIndicators: false) {
-					VStack(spacing: 20) {
-						switch viewModel.state {
-						case .idle:
-							VStack {
-								Text("👨‍⚖️")
-									.font(.system(size: 50))
-								Text("Здесь будут отображаться рекламные ставки товара")
-									.multilineTextAlignment(.center)
-							}
-							.frame(width: geometry.size.width)
-							.frame(minHeight: geometry.size.height - 50)
-						case .loading:
-							ProgressView()
+			VStack {
+				TextField("Ключевое слово", text: $keyword)
+					.padding(10)
+					.background(Color.init(.systemGray6))
+					.clipShape(Capsule())
+				
+				GeometryReader { geometry in
+					ScrollView(showsIndicators: false) {
+						VStack(spacing: 20) {
+							switch viewModel.state {
+							case .idle:
+								VStack {
+									Text("💰")
+										.font(.system(size: 50))
+									Text("Здесь будут отображаться рекламные ставки товара")
+										.multilineTextAlignment(.center)
+								}
 								.frame(width: geometry.size.width)
-								.frame(minHeight: geometry.size.height)
-						case .success(let response):
-							Text(response.data)
-						case .error(let error):
-							VStack {
-								Text("😓")
-									.font(.system(size: 50))
-									.padding(.bottom, -10)
-								Text("Ой-ой")
-									.font(.system(size: 20, weight: .semibold))
-								Text("Кажется возникла ошибка на стороне сервера, попробуйте позже")
-									.multilineTextAlignment(.center)
-							}
-							.frame(width: geometry.size.width)
-							.frame(minHeight: geometry.size.height - 50)
-							.onAppear {
-								errorMessage = error.localizedDescription
-								errorAlertIsShowed = true
+								.frame(minHeight: geometry.size.height - 50)
+							case .loading:
+								ProgressView()
+									.frame(width: geometry.size.width)
+									.frame(minHeight: geometry.size.height)
+							case .success(let response):
+								Text(response.data)
+							case .error(let error):
+								VStack {
+									Text("😓")
+										.font(.system(size: 50))
+										.padding(.bottom, -10)
+									Text("Ой-ой")
+										.font(.system(size: 20, weight: .semibold))
+									Text("Кажется возникла ошибка на стороне сервера, попробуйте позже")
+										.multilineTextAlignment(.center)
+								}
+								.frame(width: geometry.size.width)
+								.frame(minHeight: geometry.size.height - 50)
+								.onAppear {
+									errorMessage = error.localizedDescription
+									errorAlertIsShowed = true
+								}
 							}
 						}
 					}
 				}
 			}
-			.padding(.horizontal)
 			.navigationTitle("Стакан цен")
+			.padding(.horizontal)
 		}
-		.searchable(text: $keyword, placement: .navigationBarDrawer(displayMode: .always), prompt: "Ключевое слово")
-		.onSubmit(of: .search) {
+		.onSubmit(of: .text) {
 			Task {
 				await viewModel.searchProduct(for: keyword)
 			}

@@ -20,51 +20,50 @@ struct GenerateProductView: View {
 	var body: some View {
 		NavigationStack {
 			VStack {
-				Section {
-					GeometryReader { geometry in
-						ScrollView(showsIndicators: false) {
-							VStack(alignment: .center, spacing: 15) {
-								switch viewModel.state {
-								case .idle:
-									EmptyView()
-								case .loading:
-									VStack {
-										ProgressView()
-										Text("Генерируем вашу карточку 😊")
-									}
-									.frame(width: geometry.size.width)
-									.frame(minHeight: geometry.size.height)
-								case .success(let response):
-									Text(response.data)
-									Button {
-										UIPasteboard.general.string = response.data
-										alertIsShowed = true
-									} label: {
-										Text("Скопировать")
-											.padding()
-											.foregroundColor(.white)
-											.background(Color.init(.systemBlue))
-											.clipShape(Capsule())
-									}
-								case .error(let error):
-									VStack {}
-									.onAppear {
-										errorMessage = error.localizedDescription
-										errorAlertIsShowed = true
-										print(error.localizedDescription)
-									}
+				VStack(alignment: .leading) {
+					Text("Здесь вы можете сгенерировать описание и индексируемые теги для вашего товара")
+						.foregroundColor(.gray)
+					TextField("Ключевое слово", text: $keyword)
+						.padding(10)
+						.background(Color.init(.systemGray6))
+						.clipShape(Capsule())
+				}
+				
+				GeometryReader { geometry in
+					ScrollView(showsIndicators: false) {
+						VStack(alignment: .center, spacing: 15) {
+							switch viewModel.state {
+							case .idle:
+								EmptyView()
+							case .loading:
+								VStack {
+									ProgressView()
+									Text("Генерируем вашу карточку 😊")
+								}
+								.frame(width: geometry.size.width)
+								.frame(minHeight: geometry.size.height)
+							case .success(let response):
+								Text(response.data)
+									.textSelection(.enabled)
+								Button {
+									UIPasteboard.general.string = response.data
+									alertIsShowed = true
+								} label: {
+									Text("Скопировать")
+										.padding()
+										.foregroundColor(.white)
+										.background(Color.init(.systemBlue))
+										.clipShape(Capsule())
+								}
+							case .error(let error):
+								VStack {}
+								.onAppear {
+									errorMessage = error.localizedDescription
+									errorAlertIsShowed = true
+									print(error.localizedDescription)
 								}
 							}
 						}
-					}
-				} header: {
-					VStack(alignment: .leading) {
-						Text("Здесь вы можете сгенерировать описание и индексируемые теги для вашего товара")
-							.foregroundColor(.gray)
-						TextField("Ключевое слово", text: $keyword)
-							.padding(10)
-							.background(Color.init(.systemGray6))
-							.clipShape(Capsule())
 					}
 				}
 			}

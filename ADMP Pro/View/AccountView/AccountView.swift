@@ -15,70 +15,67 @@ struct AccountView: View {
 	var body: some View {
 		NavigationStack {
 			VStack {
-				Section {
-					ScrollView(showsIndicators: false) {
-						VStack(alignment: .leading, spacing: 15) {
+				HeaderView()
+				ScrollView(showsIndicators: false) {
+					VStack(alignment: .leading, spacing: 15) {
 
+						VStack(alignment: .leading) {
+							Text("Сэкономлено")
+								.font(.system(size: 18, weight: .semibold))
+								.padding(.bottom, 3)
+							HStack {
+								Text("За сегодня:")
+								Spacer()
+								Text("560.2 ₽")
+							}
+							HStack {
+								Text("За месяц")
+								Spacer()
+								Text("2660.11 ₽")
+							}
+							HStack {
+								Text("За все время:")
+								Spacer()
+								Text("8571.52 ₽")
+							}
+						}
+						
+						VStack(spacing: 5) {
 							VStack(alignment: .leading) {
-								Text("Сэкономлено")
+								Text("История операций")
 									.font(.system(size: 18, weight: .semibold))
 									.padding(.bottom, 3)
 								HStack {
-									Text("За сегодня:")
+									Text("Рекламная компания")
 									Spacer()
-									Text("560.2 ₽")
+									Text("14.04.2023")
 								}
 								HStack {
-									Text("За месяц")
+									Text("Рекламная компания")
 									Spacer()
-									Text("2660.11 ₽")
+									Text("11.04.2023")
 								}
 								HStack {
-									Text("За все время:")
+									Text("Создание товара")
 									Spacer()
-									Text("8571.52 ₽")
+									Text("02.04.2023")
 								}
 							}
-							
-							VStack(spacing: 5) {
-								VStack(alignment: .leading) {
-									Text("История операций")
-										.font(.system(size: 18, weight: .semibold))
-										.padding(.bottom, 3)
-									HStack {
-										Text("Рекламная компания")
-										Spacer()
-										Text("14.04.2023")
-									}
-									HStack {
-										Text("Рекламная компания")
-										Spacer()
-										Text("11.04.2023")
-									}
-									HStack {
-										Text("Создание товара")
-										Spacer()
-										Text("02.04.2023")
-									}
-								}
-								Button {
-									showingSettingsSheet.toggle()
-								} label: {
-									Text("Полная история")
-										.foregroundColor(.white)
-										.padding(10)
-										.background(Color.init(.systemBlue))
-										.clipShape(Capsule())
-								}
-								.padding(.top, 10)
+							Button {
+								showingSettingsSheet.toggle()
+							} label: {
+								Text("Полная история")
+									.padding(10)
+									.foregroundColor(Color(.systemGroupedBackground))
+									.background(Color.init(.label))
+									.clipShape(Capsule())
 							}
+							.padding(.top, 10)
 						}
 					}
-				} header: {
-					HeaderView()
 				}
+				.padding(.horizontal, 15)
 			}
-			.padding(.horizontal, 15)
 			.navigationTitle("Мой Аккаунт")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
@@ -111,21 +108,24 @@ struct HeaderView: View {
 		HStack {
 			VStack(alignment: .leading) {
 				Text("Иван Ровков")
-					.font(.system(size: 25))
-				Text("Premium")
+					.font(.system(size: 25, weight: .bold))
+				
+				Text("Pro+")
+					.font(.system(size: 20, weight: .semibold))
 			}
 			
 			Spacer()
 			
 			NavigationLink(destination: SubscriptionView()) {
-				Text("Улучшить")
-					.foregroundColor(.white)
+				Text("Подписка")
 					.padding(10)
-					.background(Color.init(.systemBlue))
+					.foregroundColor(Color(.systemGroupedBackground))
+					.background(Color.init(.label))
 					.clipShape(Capsule())
 			}
 		}
-		.frame(maxWidth: .infinity, alignment: .leading)
+		.padding()
+		.background(Color(.secondarySystemBackground))
 	}
 }
 
