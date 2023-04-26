@@ -10,7 +10,7 @@ import SPIndicator
 
 struct SearchView: View {
 	
-	@StateObject private var viewModel = SearchViewModel(service: NetworkService())
+	@StateObject private var viewModel = SearchViewModel(networkService: NetworkService())
 	
 	@State private var keyword: String = ""
 	@State private var errorMessage: String = ""

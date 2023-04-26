@@ -16,7 +16,7 @@ class GPTViewModel: ObservableObject {
 	enum State {
 		case idle
 	  case loading
-		case success(GPTResponse)
+		case success(ProductCard)
 	  case error(Error)
 	}
 	
@@ -27,8 +27,11 @@ class GPTViewModel: ObservableObject {
 	func generateProductCard(for keyword: String) async {
 		self.state = .loading
 		do {
-			let query = GPTRequest(keyword: keyword)
-			let data = try await networkService.postJSON(for: query, to: "https://admp.pro/api/v1/gpt-generate-card-description", responseType: GPTResponse.self)
+			let dataDTO = ProductCardDTO(keyword: keyword)
+			let data = try await networkService.post(
+				to: URLManager.shared.createURL(endPoint: .gpt),
+				data: dataDTO,
+				decodingType: ProductCard.self)
 			state = .success(data)
 		} catch {
 			state = .error(error)
