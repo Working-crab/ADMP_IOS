@@ -50,14 +50,6 @@ struct SubscriptionCardView: View {
 	}
 }
 
-struct ScaleButtonStyle: ButtonStyle {
-	func makeBody(configuration: Self.Configuration) -> some View {
-		configuration.label
-			.scaleEffect(configuration.isPressed ? 0.95 : 1)
-			.animation(.linear(duration: 0.1), value: configuration.isPressed)
-	}
-}
-
 struct SubscriptionView_Previews: PreviewProvider {
 	static var previews: some View {
 		SubscriptionView()

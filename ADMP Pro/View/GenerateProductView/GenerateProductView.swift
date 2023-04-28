@@ -23,10 +23,7 @@ struct GenerateProductView: View {
 				VStack(alignment: .leading) {
 					Text("Здесь вы можете сгенерировать описание и индексируемые теги для вашего товара")
 						.foregroundColor(.gray)
-					TextField("Ключевое слово", text: $keyword)
-						.padding(10)
-						.background(Color.init(.systemGray6))
-						.clipShape(Capsule())
+					CustomTextEdit(placeholder: "Ключевое слово", text: $keyword)
 				}
 				
 				GeometryReader { geometry in
@@ -37,8 +34,8 @@ struct GenerateProductView: View {
 								EmptyView()
 							case .loading:
 								VStack {
-									ProgressView()
-									Text("Генерируем вашу карточку 😊")
+									EmojiLoadingView(size: 70)
+									Text("Генерируем карточку...")
 								}
 								.frame(width: geometry.size.width)
 								.frame(minHeight: geometry.size.height)
@@ -93,6 +90,9 @@ struct GenerateProductView: View {
 			preset: .done,
 			haptic: .success
 			)
+		}
+		.toolbar {
+			Text("dwdaw")
 		}
 	}
 }

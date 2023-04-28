@@ -19,11 +19,7 @@ struct SearchView: View {
 	var body: some View {
 		NavigationStack {
 			VStack {
-				TextField("Ключевое слово", text: $keyword)
-					.padding(10)
-					.background(Color.init(.systemGray6))
-					.clipShape(Capsule())
-				
+				CustomTextEdit(placeholder: "Ключевое слово", text: $keyword)
 				GeometryReader { geometry in
 					ScrollView(showsIndicators: false) {
 						VStack(spacing: 20) {
