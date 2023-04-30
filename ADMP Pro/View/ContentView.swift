@@ -29,7 +29,7 @@ struct ContentView: View {
 			GenerateProductView()
 				.tag(3)
 				.tabItem {
-					Image(systemName: "doc.badge.plus")
+					Image(systemName: "doc.plaintext.fill")
 					Text("Генерация карты")
 				}
 			AccountView()
@@ -40,6 +40,11 @@ struct ContentView: View {
 				}
 		}
 		.environmentObject(appSettings)
+		.onAppear {
+			let tabBarAppearance = UITabBarAppearance()
+			tabBarAppearance.configureWithDefaultBackground()
+			UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+		}
 	}
 }
 

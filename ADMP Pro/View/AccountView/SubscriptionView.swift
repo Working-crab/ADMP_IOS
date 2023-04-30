@@ -30,6 +30,9 @@ struct SubscriptionView: View {
 }
 
 struct SubscriptionCardView: View {
+	
+	@Environment(\.colorScheme) var colorScheme
+	
 	var body: some View {
 		VStack(alignment: .leading, spacing: 10) {
 			Text("Pro+")
@@ -44,7 +47,7 @@ struct SubscriptionCardView: View {
 		}
 		.padding()
 		.foregroundColor(.white)
-		.background(.black)
+		.background(colorScheme == .light ? .black : Color(.systemGray6))
 		.clipShape(RoundedRectangle(cornerRadius: 25))
 		.shadow(color: Color.black.opacity(0.1), radius: 20)
 	}

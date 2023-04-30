@@ -46,7 +46,7 @@ struct SearchView: View {
 										.padding(.bottom, -10)
 									Text("Ой-ой")
 										.font(.system(size: 20, weight: .semibold))
-									Text("Кажется возникла ошибка на стороне сервера, попробуйте позже")
+									Text("Кажется возникла какая-то ошибка, попробуйте еще")
 										.multilineTextAlignment(.center)
 								}
 								.frame(width: geometry.size.width)
@@ -58,14 +58,24 @@ struct SearchView: View {
 							}
 						}
 					}
+					.scrollDismissesKeyboard(.immediately)
+					.refreshable {
+						if !keyword.isEmpty {
+							Task {
+								await viewModel.searchProduct(for: keyword)
+							}
+						}
+					}
 				}
 			}
 			.navigationTitle("Стакан цен")
 			.padding(.horizontal)
 		}
 		.onSubmit(of: .text) {
-			Task {
-				await viewModel.searchProduct(for: keyword)
+			if !keyword.isEmpty {
+				Task {
+					await viewModel.searchProduct(for: keyword)
+				}
 			}
 		}
 		.SPIndicator(

@@ -90,6 +90,17 @@ struct AccountView: View {
 								Image(systemName: "gearshape")
 							}
 						}
+						
+						Divider()
+						Button(role: .destructive) {
+							
+						} label: {
+							HStack {
+								Text("Выход")
+								Spacer()
+								Image(systemName: "rectangle.portrait.and.arrow.right")
+							}
+						}
 					} label: {
 						Image(systemName: "ellipsis")
 							.foregroundColor(.blue)
@@ -131,20 +142,35 @@ struct HeaderView: View {
 
 struct SheetView: View {
 	@EnvironmentObject var appSettings: AppSettings
+	@Environment(\.colorScheme) var colorScheme
 	@Environment(\.dismiss) var dismiss
+	
+	@State private var alertIsShowed = false
 	
 	var body: some View {
 		NavigationStack {
-			ScrollView {
-				VStack {
-					VStack {
-						Text("Токен")
-							.bold()
-						TextField("Токен Wilberries", text: appSettings.$wbToken)
-							.padding(10)
-							.background(Color.init(.systemGray6))
-							.clipShape(Capsule())
-					}
+			VStack {
+				VStack(alignment: .leading) {
+					Text("Токен")
+						.bold()
+					Text("Ваш токен в можете найти на панеле управления Wilberries в разделе \"Раздел\" ")
+						.foregroundColor(.gray)
+						.font(.system(size: 15))
+					TextField("Токен Wilberries", text: appSettings.$wbToken)
+						.padding(10)
+						.background(colorScheme == .dark ?
+												Color.init(.systemGray5) :
+												Color.init(.systemGray6))
+						.clipShape(Capsule())
+				}
+				
+				Spacer()
+				
+				Button {
+					alertIsShowed = true
+				} label: {
+					Text("Удалить учетную запись")
+						.foregroundColor(.red)
 				}
 			}
 			.padding(.horizontal)
@@ -154,6 +180,12 @@ struct SheetView: View {
 						dismiss()
 					}
 				}
+			}
+			.alert(isPresented: $alertIsShowed) {
+				Alert(title: Text("Удаление учетной записи"),
+							message: Text("Ваша учетная запись будет удалена без возможности восстановления, вы уверены, что хотите удалить ее?"),
+							primaryButton: .destructive(Text("Удалить")),
+							secondaryButton: .default(Text("Отмена")))
 			}
 		}
 		.navigationTitle("Настройки")

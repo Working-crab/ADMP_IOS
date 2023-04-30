@@ -255,11 +255,12 @@
 			};
 			buildConfigurationList = 985DF9A429EFE49700FB0AD5 /* Build configuration list for PBXProject "ADMP Pro" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 985DF9A029EFE49700FB0AD5;
 			packageReferences = (

@@ -62,13 +62,16 @@ struct GenerateProductView: View {
 							}
 						}
 					}
+					.scrollDismissesKeyboard(.immediately)
 				}
 			}
 			.padding(.horizontal)
 			.navigationTitle("Карточка товара")
 			.onSubmit(of: .text) {
-				Task.detached {
-					await viewModel.generateProductCard(for: keyword)
+				if !keyword.isEmpty {
+					Task {
+						await viewModel.generateProductCard(for: keyword)
+					}
 				}
 			}
 			.SPIndicator(
