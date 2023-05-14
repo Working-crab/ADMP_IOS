@@ -33,10 +33,14 @@ struct SearchView: View {
 								.frame(width: geometry.size.width)
 								.frame(minHeight: geometry.size.height - 50)
 							case .loading:
-								CircularLoadingView(
-									color: colorScheme == .dark ? .white : .black,
-									lineCap: .round
-								)
+								VStack {
+									CircularLoadingView(
+										color: colorScheme == .dark ? .white : .black,
+										lineCap: .round
+									)
+								}
+								.frame(width: geometry.size.width)
+								.frame(minHeight: geometry.size.height)
 							case .success(let response):
 								Text(response.data)
 							case .error(let error):
