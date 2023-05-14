@@ -10,11 +10,11 @@ import SPIndicator
 
 struct SearchView: View {
 	
+	@Environment(\.colorScheme) var colorScheme
+
 	@StateObject private var viewModel = SearchViewModel(networkService: NetworkService())
 	
 	@State private var keyword: String = ""
-	@State private var errorMessage: String = ""
-	@State private var errorAlertIsShowed = false
 	
 	var body: some View {
 		NavigationStack {
@@ -26,35 +26,23 @@ struct SearchView: View {
 							switch viewModel.state {
 							case .idle:
 								VStack {
-									Text("💰")
-										.font(.system(size: 50))
 									Text("Здесь будут отображаться рекламные ставки товара")
+										.foregroundColor(.gray)
 										.multilineTextAlignment(.center)
 								}
 								.frame(width: geometry.size.width)
 								.frame(minHeight: geometry.size.height - 50)
 							case .loading:
-								ProgressView()
-									.frame(width: geometry.size.width)
-									.frame(minHeight: geometry.size.height)
+								CircularLoadingView(
+									color: colorScheme == .dark ? .white : .black,
+									lineCap: .round
+								)
 							case .success(let response):
 								Text(response.data)
 							case .error(let error):
-								VStack {
-									Text("😓")
-										.font(.system(size: 50))
-										.padding(.bottom, -10)
-									Text("Ой-ой")
-										.font(.system(size: 20, weight: .semibold))
-									Text("Кажется возникла какая-то ошибка, попробуйте еще")
-										.multilineTextAlignment(.center)
-								}
-								.frame(width: geometry.size.width)
-								.frame(minHeight: geometry.size.height - 50)
-								.onAppear {
-									errorMessage = error.localizedDescription
-									errorAlertIsShowed = true
-								}
+								ErrorMessageView(error: error.localizedDescription)
+									.frame(width: geometry.size.width)
+									.frame(minHeight: geometry.size.height - 50)
 							}
 						}
 					}
@@ -78,16 +66,6 @@ struct SearchView: View {
 				}
 			}
 		}
-		.SPIndicator(
-		isPresent: $errorAlertIsShowed,
-		title: "Ошибка сервера",
-		message: errorMessage,
-		duration: 2,
-		presentSide: .top,
-		dismissByDrag: true,
-		preset: .error,
-		haptic: .error
-		)
 	}
 }
 

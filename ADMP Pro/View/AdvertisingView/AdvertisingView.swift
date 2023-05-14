@@ -43,5 +43,6 @@ struct AdvertisingView: View {
 struct AdvertisingView_Previews: PreviewProvider {
 	static var previews: some View {
 		AdvertisingView()
+			.environmentObject(AppSettings())
 	}
 }

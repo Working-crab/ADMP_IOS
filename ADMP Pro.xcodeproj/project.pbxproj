@@ -19,13 +19,15 @@
 		986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC12C29F07FBE0061AB7E /* SearchView.swift */; };
 		986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC12E29F0814D0061AB7E /* AdvertisingView.swift */; };
 		986CC13129F0827B0061AB7E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986CC13029F0827B0061AB7E /* AccountView.swift */; };
+		989205122A1150AF000129A5 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989205112A1150AF000129A5 /* Haptic.swift */; };
+		989205142A1154B9000129A5 /* CircularLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989205132A1154B9000129A5 /* CircularLoadingView.swift */; };
+		989205162A115BA1000129A5 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989205152A115BA1000129A5 /* ErrorMessageView.swift */; };
 		98BA751C29F56D7E00CF394F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA751B29F56D7E00CF394F /* SearchViewModel.swift */; };
 		98BA752229F592D200CF394F /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 98BA752129F592D200CF394F /* SPIndicator */; };
 		98C58B4229F53790009659F6 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */; };
 		98C58B4629F53BB6009659F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4529F53BB6009659F6 /* NetworkService.swift */; };
 		98C58B4A29F54862009659F6 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4929F54862009659F6 /* ProductModel.swift */; };
 		98C58B4C29F54AF7009659F6 /* GPTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */; };
-		98D5426929FA598E00367A98 /* CircullarLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5426829FA598E00367A98 /* CircullarLoadingView.swift */; };
 		98D5426C29FA627C00367A98 /* ButtonScaleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5426B29FA627C00367A98 /* ButtonScaleStyle.swift */; };
 		98D5426E29FA62B500367A98 /* CustomTextEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5426D29FA62B500367A98 /* CustomTextEdit.swift */; };
 /* End PBXBuildFile section */
@@ -45,12 +47,14 @@
 		986CC12E29F0814D0061AB7E /* AdvertisingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingView.swift; sourceTree = "<group>"; };
 		986CC13029F0827B0061AB7E /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		9889124429F042080077FFE8 /* ADMP-Pro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ADMP-Pro-Info.plist"; sourceTree = SOURCE_ROOT; };
+		989205112A1150AF000129A5 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
+		989205132A1154B9000129A5 /* CircularLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoadingView.swift; sourceTree = "<group>"; };
+		989205152A115BA1000129A5 /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		98BA751B29F56D7E00CF394F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		98C58B4129F53790009659F6 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		98C58B4529F53BB6009659F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		98C58B4929F54862009659F6 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTViewModel.swift; sourceTree = "<group>"; };
-		98D5426829FA598E00367A98 /* CircullarLoadingView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CircullarLoadingView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		98D5426B29FA627C00367A98 /* ButtonScaleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonScaleStyle.swift; sourceTree = "<group>"; };
 		98D5426D29FA62B500367A98 /* CustomTextEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEdit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				9803DCA929F2D19E00885C63 /* AppSettings.swift */,
+				989205112A1150AF000129A5 /* Haptic.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -201,8 +206,9 @@
 		98D5426729FA597100367A98 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				98D5426829FA598E00367A98 /* CircullarLoadingView.swift */,
 				98D5426D29FA62B500367A98 /* CustomTextEdit.swift */,
+				989205132A1154B9000129A5 /* CircularLoadingView.swift */,
+				989205152A115BA1000129A5 /* ErrorMessageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -246,7 +252,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					985DF9A829EFE49700FB0AD5 = {
 						CreatedOnToolsVersion = 14.2;
@@ -293,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				985DF9AF29EFE49700FB0AD5 /* ContentView.swift in Sources */,
+				989205142A1154B9000129A5 /* CircularLoadingView.swift in Sources */,
 				985F505229F97A9600E94026 /* NetworkError.swift in Sources */,
 				986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */,
 				98BA751C29F56D7E00CF394F /* SearchViewModel.swift in Sources */,
@@ -307,9 +314,10 @@
 				98D5426C29FA627C00367A98 /* ButtonScaleStyle.swift in Sources */,
 				985F505429F97B0500E94026 /* URLManager.swift in Sources */,
 				986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */,
+				989205122A1150AF000129A5 /* Haptic.swift in Sources */,
 				986CC13129F0827B0061AB7E /* AccountView.swift in Sources */,
+				989205162A115BA1000129A5 /* ErrorMessageView.swift in Sources */,
 				98052D6229F0E8110006E1D2 /* SubscriptionView.swift in Sources */,
-				98D5426929FA598E00367A98 /* CircullarLoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -380,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

@@ -10,10 +10,10 @@ import SPIndicator
 
 struct GenerateProductView: View {
 	
+	@Environment(\.colorScheme) var colorScheme
+	
 	@State private var keyword: String = ""
 	@State private var alertIsShowed = false
-	@State private var errorMessage: String = ""
-	@State private var errorAlertIsShowed = false
 	
 	@StateObject private var viewModel = GPTViewModel(networkService: NetworkService())
 	
@@ -34,8 +34,10 @@ struct GenerateProductView: View {
 								EmptyView()
 							case .loading:
 								VStack {
-									EmojiLoadingView(size: 70)
-									Text("Генерируем карточку...")
+									CircularLoadingView(
+										color: colorScheme == .dark ? .white : .black,
+										lineCap: .round
+									)
 								}
 								.frame(width: geometry.size.width)
 								.frame(minHeight: geometry.size.height)
@@ -53,16 +55,20 @@ struct GenerateProductView: View {
 										.clipShape(Capsule())
 								}
 							case .error(let error):
-								VStack {}
-								.onAppear {
-									errorMessage = error.localizedDescription
-									errorAlertIsShowed = true
-									print(error.localizedDescription)
-								}
+								ErrorMessageView(error: error.localizedDescription)
+									.frame(width: geometry.size.width)
+									.frame(minHeight: geometry.size.height)
 							}
 						}
 					}
 					.scrollDismissesKeyboard(.immediately)
+					.refreshable {
+						if !keyword.isEmpty {
+							Task {
+								await viewModel.generateProductCard(for: keyword)
+							}
+						}
+					}
 				}
 			}
 			.padding(.horizontal)
@@ -75,16 +81,6 @@ struct GenerateProductView: View {
 				}
 			}
 			.SPIndicator(
-			isPresent: $errorAlertIsShowed,
-			title: "Ошибка",
-			message: errorMessage,
-			duration: 2,
-			presentSide: .top,
-			dismissByDrag: true,
-			preset: .error,
-			haptic: .error
-			)
-			.SPIndicator(
 			isPresent: $alertIsShowed,
 			title: "Скопировано",
 			duration: 2,
@@ -93,9 +89,6 @@ struct GenerateProductView: View {
 			preset: .done,
 			haptic: .success
 			)
-		}
-		.toolbar {
-			Text("dwdaw")
 		}
 	}
 }

@@ -10,4 +10,5 @@ import Foundation
 protocol NetworkServiceProtocol {
 	func get<T: Codable>(from url: String, decodingType: T.Type) async throws -> T
 	func post<T: Codable>(to url: String, data: Codable, decodingType: T.Type) async throws -> T
+	
 }
