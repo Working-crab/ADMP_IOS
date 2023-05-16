@@ -29,7 +29,7 @@ class NetworkService: NetworkServiceProtocol {
 				throw NetworkError.badResponse
 			}
 			
-			let decodedData = try JSONDecoder().decode(T.self, from: data)
+			let decodedData = try JSONDecoder().decode(decodingType, from: data)
 			
 			return decodedData
 		} catch {
@@ -46,8 +46,12 @@ class NetworkService: NetworkServiceProtocol {
 		request.httpMethod = "POST"
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 		
-		let body = try JSONEncoder().encode(data)
-		request.httpBody = body
+		do {
+			let body = try JSONEncoder().encode(data)
+			request.httpBody = body
+		} catch {
+			throw NetworkError.badRequest
+		}
 		
 		do {
 			let (data, response) = try await session.data(for: request)
@@ -56,7 +60,7 @@ class NetworkService: NetworkServiceProtocol {
 				throw NetworkError.badResponse
 			}
 			
-			let decodedData = try JSONDecoder().decode(T.self, from: data)
+			let decodedData = try JSONDecoder().decode(decodingType, from: data)
 			
 			return decodedData
 		} catch {
