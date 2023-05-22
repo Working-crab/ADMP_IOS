@@ -28,6 +28,7 @@
 		98C58B4629F53BB6009659F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4529F53BB6009659F6 /* NetworkService.swift */; };
 		98C58B4A29F54862009659F6 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4929F54862009659F6 /* ProductModel.swift */; };
 		98C58B4C29F54AF7009659F6 /* GPTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */; };
+		98D342862A1B5066006DB193 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D342852A1B5066006DB193 /* SecureStorage.swift */; };
 		98D5426C29FA627C00367A98 /* ButtonScaleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5426B29FA627C00367A98 /* ButtonScaleStyle.swift */; };
 		98D5426E29FA62B500367A98 /* CustomTextEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5426D29FA62B500367A98 /* CustomTextEdit.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		98C58B4529F53BB6009659F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		98C58B4929F54862009659F6 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTViewModel.swift; sourceTree = "<group>"; };
+		98D342852A1B5066006DB193 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		98D5426B29FA627C00367A98 /* ButtonScaleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonScaleStyle.swift; sourceTree = "<group>"; };
 		98D5426D29FA62B500367A98 /* CustomTextEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEdit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 			children = (
 				9803DCA929F2D19E00885C63 /* AppSettings.swift */,
 				989205112A1150AF000129A5 /* Haptic.swift */,
+				98D342852A1B5066006DB193 /* SecureStorage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				9803DCAA29F2D19E00885C63 /* AppSettings.swift in Sources */,
 				98C58B4629F53BB6009659F6 /* NetworkService.swift in Sources */,
 				98C58B4229F53790009659F6 /* NetworkServiceProtocol.swift in Sources */,
+				98D342862A1B5066006DB193 /* SecureStorage.swift in Sources */,
 				9803DCB029F2DCD600885C63 /* GenerateProductView.swift in Sources */,
 				98C58B4A29F54862009659F6 /* ProductModel.swift in Sources */,
 				98D5426E29FA62B500367A98 /* CustomTextEdit.swift in Sources */,
