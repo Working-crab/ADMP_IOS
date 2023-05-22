@@ -9,42 +9,74 @@ import SwiftUI
 
 struct ContentView: View {
 	
-	@State private var selectedTab = 1
+	@State private var selectedTab = "Поиск"
+	
 	private let appSettings = AppSettings()
+	
+	init() {
+		UITabBar.appearance().isHidden = true
+	}
 
 	var body: some View {
-		TabView(selection: $selectedTab) {
-			SearchView()
-				.tag(1)
-				.tabItem {
-					Image(systemName: "magnifyingglass.circle")
-					Text("Поиск")
-				}
-			AdvertisingView()
-				.tag(2)
-				.tabItem {
-					Image(systemName: "list.bullet.rectangle.fill")
-					Text("Мои компании")
-				}
-			GenerateProductView()
-				.tag(3)
-				.tabItem {
-					Image(systemName: "doc.plaintext.fill")
-					Text("Генерация карты")
-				}
-			AccountView()
-				.tag(4)
-				.tabItem {
-					Image(systemName: "person.circle.fill")
-					Text("Мой аккаунт")
-				}
+		ZStack(alignment: .bottom) {
+			TabView(selection: $selectedTab) {
+				SearchView()
+					.tag("Поиск")
+				AdvertisingView()
+					.tag("Рекламные компании")
+				GenerateProductView()
+					.tag("Генерация товара")
+				AccountView()
+					.tag("Профиль")
+			}
+			
+			HStack {
+				Spacer()
+				TabBarItem(tabName: "Поиск", selectedTab: $selectedTab, image: "magnifyingglass.circle")
+				Spacer()
+				TabBarItem(tabName: "Рекламные компании", selectedTab: $selectedTab, image: "list.bullet.rectangle.fill")
+				Spacer()
+				TabBarItem(tabName: "Генерация товара", selectedTab: $selectedTab, image: "doc.plaintext.fill")
+				Spacer()
+				TabBarItem(tabName: "Профиль", selectedTab: $selectedTab, image: "person.circle.fill")
+				Spacer()
+			}
+			.padding(.vertical, 15)
+			.frame(maxWidth: .infinity)
+			.background(Color(.systemGray6))
 		}
+		.ignoresSafeArea(.keyboard)
 		.environmentObject(appSettings)
-		.onAppear {
-			let tabBarAppearance = UITabBarAppearance()
-			tabBarAppearance.configureWithDefaultBackground()
-			UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+	}
+}
+
+struct TabBarItem: View {
+	
+	@State var tabName: String
+	@Binding var selectedTab: String
+	
+	var image: String
+		
+	var body: some View {
+		Button {
+			withAnimation(.spring()) {
+				selectedTab = tabName
+			}
+		} label: {
+			HStack {
+				Image(systemName: image)
+					.font(.system(size: 18))
+				if selectedTab == tabName {
+					Text(tabName)
+						.font(.system(size: 15))
+				}
+			}
+			.foregroundColor(Color(.label))
 		}
+		.padding(10)
+		.opacity(selectedTab == tabName ? 1 : 0.6)
+		.background(selectedTab == tabName ? Color(.systemBackground) : Color(.systemGray6))
+		.clipShape(Capsule())
 	}
 }
 

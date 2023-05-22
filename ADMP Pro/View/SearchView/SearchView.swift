@@ -20,6 +20,7 @@ struct SearchView: View {
 		NavigationStack {
 			VStack {
 				CustomTextEdit(placeholder: "Ключевое слово", text: $keyword)
+					.ignoresSafeArea(.keyboard, edges: .bottom)
 				GeometryReader { geometry in
 					ScrollView(showsIndicators: false) {
 						VStack(spacing: 20) {

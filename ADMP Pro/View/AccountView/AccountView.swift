@@ -17,66 +17,11 @@ struct AccountView: View {
 			VStack {
 				HeaderView()
 				ScrollView(showsIndicators: false) {
-					VStack(alignment: .leading, spacing: 15) {
-
-						VStack(alignment: .leading) {
-							Text("Сэкономлено")
-								.font(.system(size: 18, weight: .semibold))
-								.padding(.bottom, 3)
-							HStack {
-								Text("За сегодня:")
-								Spacer()
-								Text("560.2 ₽")
-							}
-							HStack {
-								Text("За месяц")
-								Spacer()
-								Text("2660.11 ₽")
-							}
-							HStack {
-								Text("За все время:")
-								Spacer()
-								Text("8571.52 ₽")
-							}
-						}
-						
-						VStack(spacing: 5) {
-							VStack(alignment: .leading) {
-								Text("История операций")
-									.font(.system(size: 18, weight: .semibold))
-									.padding(.bottom, 3)
-								HStack {
-									Text("Рекламная компания")
-									Spacer()
-									Text("14.04.2023")
-								}
-								HStack {
-									Text("Рекламная компания")
-									Spacer()
-									Text("11.04.2023")
-								}
-								HStack {
-									Text("Создание товара")
-									Spacer()
-									Text("02.04.2023")
-								}
-							}
-							Button {
-								showingSettingsSheet.toggle()
-							} label: {
-								Text("Полная история")
-									.padding(10)
-									.foregroundColor(Color(.systemGroupedBackground))
-									.background(Color.init(.label))
-									.clipShape(Capsule())
-							}
-							.padding(.top, 10)
-						}
-					}
+					
 				}
 				.padding(.horizontal, 15)
 			}
-			.navigationTitle("Мой Аккаунт")
+			.navigationTitle("Профиль")
 			.navigationBarTitleDisplayMode(.inline)
 			.toolbar {
 				ToolbarItem(placement: .navigationBarTrailing) {
@@ -118,9 +63,9 @@ struct HeaderView: View {
 	var body: some View {
 		HStack {
 			VStack(alignment: .leading) {
+				Text("Добро пожаловать")
 				Text("Иван Ровков")
 					.font(.system(size: 25, weight: .bold))
-				
 				Text("Pro+")
 					.font(.system(size: 20, weight: .semibold))
 			}
@@ -131,12 +76,12 @@ struct HeaderView: View {
 				Text("Подписка")
 					.padding(10)
 					.foregroundColor(Color(.systemGroupedBackground))
-					.background(Color.init(.label))
+					.background(Color(.label))
 					.clipShape(Capsule())
 			}
+			.buttonStyle(ScaleButtonStyle())
 		}
 		.padding()
-		.background(Color(.secondarySystemBackground))
 	}
 }
 

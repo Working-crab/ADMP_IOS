@@ -29,7 +29,7 @@
 		98D342892A1B58A9006DB193 /* DataRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D342882A1B58A9006DB193 /* DataRequestProtocol.swift */; };
 		98D3428B2A1B5A18006DB193 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3428A2A1B5A18006DB193 /* NetworkServiceProtocol.swift */; };
 		98D3428D2A1B5A7D006DB193 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D3428C2A1B5A7D006DB193 /* NetworkService.swift */; };
-		98D5426C29FA627C00367A98 /* ButtonScaleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5426B29FA627C00367A98 /* ButtonScaleStyle.swift */; };
+		98D5426C29FA627C00367A98 /* ScaleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5426B29FA627C00367A98 /* ScaleButtonStyle.swift */; };
 		98D5426E29FA62B500367A98 /* CustomTextEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D5426D29FA62B500367A98 /* CustomTextEdit.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +57,7 @@
 		98D342882A1B58A9006DB193 /* DataRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestProtocol.swift; sourceTree = "<group>"; };
 		98D3428A2A1B5A18006DB193 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		98D3428C2A1B5A7D006DB193 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		98D5426B29FA627C00367A98 /* ButtonScaleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonScaleStyle.swift; sourceTree = "<group>"; };
+		98D5426B29FA627C00367A98 /* ScaleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyle.swift; sourceTree = "<group>"; };
 		98D5426D29FA62B500367A98 /* CustomTextEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEdit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,7 +219,7 @@
 		98D5426A29FA620D00367A98 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
-				98D5426B29FA627C00367A98 /* ButtonScaleStyle.swift */,
+				98D5426B29FA627C00367A98 /* ScaleButtonStyle.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 				98C58B4A29F54862009659F6 /* ProductModel.swift in Sources */,
 				98D5426E29FA62B500367A98 /* CustomTextEdit.swift in Sources */,
 				985DF9AD29EFE49700FB0AD5 /* ADMP_ProApp.swift in Sources */,
-				98D5426C29FA627C00367A98 /* ButtonScaleStyle.swift in Sources */,
+				98D5426C29FA627C00367A98 /* ScaleButtonStyle.swift in Sources */,
 				985F505429F97B0500E94026 /* URLManager.swift in Sources */,
 				986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */,
 				989205122A1150AF000129A5 /* Haptic.swift in Sources */,
