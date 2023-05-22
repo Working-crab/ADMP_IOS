@@ -24,17 +24,16 @@ class SearchViewModel: ObservableObject {
 		self.networkService = networkService
 	}
 	
-	func searchProduct(for keyword: String) async {
+	func searchBids(for keyword: String) async {
 		self.state = .loading
 		do {
-			let productDTO = ProductCardDTO(keyword: keyword)
-			let response = try await networkService.post(
-				to: URLManager.shared.createURL(endPoint: .search),
-				data: productDTO,
-				decodingType: ProductCard.self)
-			self.state = .success(response)
+			let cardDTO = ProductCardDTO(keyword: keyword)
+			let request = ProductRequest(dto: cardDTO)
+			let data = try await networkService.request(request)
+			state = .success(data)
 		} catch {
-			self.state = .error(error)
+			state = .error(error)
 		}
 	}
 }
+

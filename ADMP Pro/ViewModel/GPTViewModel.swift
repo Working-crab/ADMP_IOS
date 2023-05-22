@@ -27,11 +27,9 @@ class GPTViewModel: ObservableObject {
 	func generateProductCard(for keyword: String) async {
 		self.state = .loading
 		do {
-			let dataDTO = ProductCardDTO(keyword: keyword)
-			let data = try await networkService.post(
-				to: URLManager.shared.createURL(endPoint: .gpt),
-				data: dataDTO,
-				decodingType: ProductCard.self)
+			let dtoCard = ProductCardDTO(keyword: keyword)
+			let request = GPTRequest(dto: dtoCard)
+			let data = try await networkService.request(request)
 			state = .success(data)
 		} catch {
 			state = .error(error)

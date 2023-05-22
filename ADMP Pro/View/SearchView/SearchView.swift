@@ -54,7 +54,7 @@ struct SearchView: View {
 					.refreshable {
 						if !keyword.isEmpty {
 							Task {
-								await viewModel.searchProduct(for: keyword)
+								await viewModel.searchBids(for: keyword)
 							}
 						}
 					}
@@ -66,7 +66,7 @@ struct SearchView: View {
 		.onSubmit(of: .text) {
 			if !keyword.isEmpty {
 				Task {
-					await viewModel.searchProduct(for: keyword)
+					await viewModel.searchBids(for: keyword)
 				}
 			}
 		}

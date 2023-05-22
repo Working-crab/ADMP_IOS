@@ -7,10 +7,36 @@
 
 import Foundation
 
-struct ProductCard: Codable {
+struct ProductCard: Decodable {
 	let data: String
 }
 
-struct ProductCardDTO: Codable {
+struct ProductCardDTO: Encodable {
 	let keyword: String
+}
+
+struct ProductRequest: DataRequest {
+	typealias Response = ProductCard
+	
+	var dto: Encodable
+		
+	var url: String {
+		return URLManager.shared.createURL(endPoint: .search)
+	}
+	
+	var queryItems: [String : String] = [:]
+	var method: HTTPMethod = .POST
+}
+
+struct GPTRequest: DataRequest {
+	typealias Response = ProductCard
+	
+	var dto: Encodable
+		
+	var url: String {
+		return URLManager.shared.createURL(endPoint: .gpt)
+	}
+	
+	var queryItems: [String : String] = [:]
+	var method: HTTPMethod = .POST
 }

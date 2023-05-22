@@ -13,7 +13,7 @@ class URLManager {
 	private init () {}
 	
 	private let tunnel = "https://"
-	private let server = "admp.pro/api/v1"
+	private let server = "stage.admp.pro/api/v1"
 	
 	func createURL(endPoint point: EndPoint) -> String {
 		let url = tunnel + server + point.rawValue
