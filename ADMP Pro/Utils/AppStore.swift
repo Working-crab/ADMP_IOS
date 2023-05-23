@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class AppSettings: ObservableObject {
+class AppStore: ObservableObject {
 		
 	@AppStorage("WBToken") var wbToken: String = ""
 }

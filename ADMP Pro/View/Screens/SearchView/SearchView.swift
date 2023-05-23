@@ -41,7 +41,7 @@ struct SearchView: View {
 									)
 								}
 								.frame(width: geometry.size.width)
-								.frame(minHeight: geometry.size.height)
+								.frame(minHeight: geometry.size.height - 50)
 							case .success(let response):
 								Text(response.data)
 							case .error(let error):

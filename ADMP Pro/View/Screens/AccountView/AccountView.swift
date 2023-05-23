@@ -86,7 +86,7 @@ struct HeaderView: View {
 }
 
 struct SheetView: View {
-	@EnvironmentObject var appSettings: AppSettings
+	@EnvironmentObject var appSettings: AppStore
 	@Environment(\.colorScheme) var colorScheme
 	@Environment(\.dismiss) var dismiss
 	

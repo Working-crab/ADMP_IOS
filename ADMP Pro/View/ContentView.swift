@@ -11,7 +11,7 @@ struct ContentView: View {
 	
 	@State private var selectedTab = "Поиск"
 	
-	private let appSettings = AppSettings()
+	private let appSettings = AppStore()
 	
 	init() {
 		UITabBar.appearance().isHidden = true

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AdvertisingView: View {
 	
-	@EnvironmentObject var appSettings: AppSettings
+	@EnvironmentObject var appSettings: AppStore
 	
 	var body: some View {
 		NavigationStack {
@@ -43,6 +43,6 @@ struct AdvertisingView: View {
 struct AdvertisingView_Previews: PreviewProvider {
 	static var previews: some View {
 		AdvertisingView()
-			.environmentObject(AppSettings())
+			.environmentObject(AppStore())
 	}
 }
