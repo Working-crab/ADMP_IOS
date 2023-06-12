@@ -101,7 +101,7 @@ struct SheetView: View {
 					Text("Ваш токен в можете найти на панеле управления Wilberries в разделе \"Раздел\" ")
 						.foregroundColor(.gray)
 						.font(.system(size: 15))
-					TextField("Токен Wilberries", text: appSettings.$wbToken)
+                    TextField("Токен Wilberries", text: appSettings.$wbToken)
 						.padding(10)
 						.background(colorScheme == .dark ?
 												Color.init(.systemGray5) :

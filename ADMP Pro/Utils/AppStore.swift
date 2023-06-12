@@ -1,14 +1,16 @@
 //
-//  AppSettings.swift
+//  File.swift
 //  ADMP Pro
 //
-//  Created by Иван Ровков on 21.04.2023.
+//  Created by Иван Ровков on 12.06.2023.
 //
 
 import Foundation
 import SwiftUI
 
 class AppStore: ObservableObject {
-		
-	@AppStorage("WBToken") var wbToken: String = ""
+        
+    @AppStorage("WBToken") var wbToken: String = ""
+    @AppStorage("IsAuth") var isAuth: Bool = false
 }
+

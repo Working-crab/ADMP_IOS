@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9803DCAA29F2D19E00885C63 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCA929F2D19E00885C63 /* AppStore.swift */; };
 		9803DCB029F2DCD600885C63 /* GenerateProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9803DCAF29F2DCD600885C63 /* GenerateProductView.swift */; };
 		98052D6229F0E8110006E1D2 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98052D6129F0E8110006E1D2 /* SubscriptionView.swift */; };
 		985DF9AD29EFE49700FB0AD5 /* ADMP_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985DF9AC29EFE49700FB0AD5 /* ADMP_ProApp.swift */; };
@@ -25,6 +24,9 @@
 		989205162A115BA1000129A5 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989205152A115BA1000129A5 /* ErrorMessageView.swift */; };
 		98BA751C29F56D7E00CF394F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA751B29F56D7E00CF394F /* SearchViewModel.swift */; };
 		98BA752229F592D200CF394F /* SPIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 98BA752129F592D200CF394F /* SPIndicator */; };
+		98BC51FE2A377F9C00D8CE0D /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC51FD2A377F9C00D8CE0D /* AppStore.swift */; };
+		98BC52012A37805400D8CE0D /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC52002A37805400D8CE0D /* AuthViewModel.swift */; };
+		98BC52032A3780E200D8CE0D /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BC52022A3780E200D8CE0D /* AuthModel.swift */; };
 		98C58B4A29F54862009659F6 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4929F54862009659F6 /* ProductModel.swift */; };
 		98C58B4C29F54AF7009659F6 /* GPTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */; };
 		98D342862A1B5066006DB193 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D342852A1B5066006DB193 /* SecureStorage.swift */; };
@@ -36,7 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9803DCA929F2D19E00885C63 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		9803DCAF29F2DCD600885C63 /* GenerateProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateProductView.swift; sourceTree = "<group>"; };
 		98052D6129F0E8110006E1D2 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 		985DF9A929EFE49700FB0AD5 /* ADMP Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADMP Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +56,9 @@
 		989205132A1154B9000129A5 /* CircularLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoadingView.swift; sourceTree = "<group>"; };
 		989205152A115BA1000129A5 /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		98BA751B29F56D7E00CF394F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		98BC51FD2A377F9C00D8CE0D /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		98BC52002A37805400D8CE0D /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		98BC52022A3780E200D8CE0D /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		98C58B4929F54862009659F6 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTViewModel.swift; sourceTree = "<group>"; };
 		98D342852A1B5066006DB193 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
@@ -80,9 +84,10 @@
 		9803DCA829F2D18900885C63 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9803DCA929F2D19E00885C63 /* AppStore.swift */,
+				98BC51FC2A377F9100D8CE0D /* New Group */,
 				989205112A1150AF000129A5 /* Haptic.swift */,
 				98D342852A1B5066006DB193 /* SecureStorage.swift */,
+				98BC51FD2A377F9C00D8CE0D /* AppStore.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				98C58B4929F54862009659F6 /* ProductModel.swift */,
+				98BC52022A3780E200D8CE0D /* AuthModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			children = (
 				98C58B4B29F54AF7009659F6 /* GPTViewModel.swift */,
 				98BA751B29F56D7E00CF394F /* SearchViewModel.swift */,
+				98BC52002A37805400D8CE0D /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -226,6 +233,13 @@
 				985F505029F97A5E00E94026 /* Networking */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		98BC51FC2A377F9100D8CE0D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		98D5426729FA597100367A98 /* Components */ = {
@@ -277,7 +291,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					985DF9A829EFE49700FB0AD5 = {
 						CreatedOnToolsVersion = 14.2;
@@ -327,10 +341,11 @@
 				985DF9AF29EFE49700FB0AD5 /* ContentView.swift in Sources */,
 				989205142A1154B9000129A5 /* CircularLoadingView.swift in Sources */,
 				986CC12D29F07FBE0061AB7E /* SearchView.swift in Sources */,
+				98BC52032A3780E200D8CE0D /* AuthModel.swift in Sources */,
 				98BA751C29F56D7E00CF394F /* SearchViewModel.swift in Sources */,
 				98C58B4C29F54AF7009659F6 /* GPTViewModel.swift in Sources */,
+				98BC51FE2A377F9C00D8CE0D /* AppStore.swift in Sources */,
 				98D3428D2A1B5A7D006DB193 /* NetworkService.swift in Sources */,
-				9803DCAA29F2D19E00885C63 /* AppStore.swift in Sources */,
 				98D3428B2A1B5A18006DB193 /* NetworkServiceProtocol.swift in Sources */,
 				98D342862A1B5066006DB193 /* SecureStorage.swift in Sources */,
 				9803DCB029F2DCD600885C63 /* GenerateProductView.swift in Sources */,
@@ -343,6 +358,7 @@
 				985F505429F97B0500E94026 /* URLManager.swift in Sources */,
 				986CC12F29F0814D0061AB7E /* AdvertisingView.swift in Sources */,
 				989205122A1150AF000129A5 /* Haptic.swift in Sources */,
+				98BC52012A37805400D8CE0D /* AuthViewModel.swift in Sources */,
 				986CC13129F0827B0061AB7E /* AccountView.swift in Sources */,
 				989205162A115BA1000129A5 /* ErrorMessageView.swift in Sources */,
 				98052D6229F0E8110006E1D2 /* SubscriptionView.swift in Sources */,
@@ -356,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -389,6 +406,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -417,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -450,6 +469,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct ADMP_ProApp: App {
+    
+    private let appSettings = AppStore()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if appSettings.isAuth {
+                ContentView()
+                    .environmentObject(appSettings)
+            } else {
+                LoginView()
+                    .environmentObject(appSettings)
+            }
         }
     }
 }

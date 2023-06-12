@@ -10,9 +10,8 @@ import SwiftUI
 struct ContentView: View {
 	
 	@State private var selectedTab = "Поиск"
-	
-	private let appSettings = AppStore()
-	
+    @EnvironmentObject var appSettings: AppStore
+
 	init() {
 		UITabBar.appearance().isHidden = true
 	}
@@ -46,7 +45,6 @@ struct ContentView: View {
 			.background(Color(.systemGray6))
 		}
 		.ignoresSafeArea(.keyboard)
-		.environmentObject(appSettings)
 	}
 }
 

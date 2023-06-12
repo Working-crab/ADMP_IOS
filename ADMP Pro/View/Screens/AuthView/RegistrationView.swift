@@ -15,45 +15,61 @@ struct RegistrationView: View {
 	
 	var body: some View {
 		NavigationStack {
-			VStack {
-				Image("Login")
-					.resizable()
-					.scaledToFit()
-				Text("Создание учетной записи")
-					.font(.title)
-					.bold()
-				
-				VStack(spacing: 10) {
-					CustomTextEdit(placeholder: "Электронная почта", text: $email)
-					CustomTextEdit(placeholder: "Пароль", text: $password)
-					CustomTextEdit(placeholder: "Повторите пароль", text: $repeatPassword)
-				}
-				
-				Button {
-					
-				} label: {
-					Text("Зарегистрироваться")
-						.font(.title3)
-						.foregroundColor(Color(.systemBackground))
-						.padding()
-						.background {
-							Capsule()
-								.fill(Color(.label))
-						}
-				}
-				.buttonStyle(ScaleButtonStyle())
-				.padding(.top)
-				
-				Spacer()
-				
-				Button {
-					showingPolicySheet.toggle()
-				} label: {
-					Text("Политика конфиденциальности")
-						.font(.subheadline)
-				}
-			}
-			.padding()
+            GeometryReader { geometry in
+                ScrollView {
+                    VStack {
+                        VStack {
+                            Image(.login)
+                                .resizable()
+                                .scaledToFit()
+                            Text("Регистрация")
+                                .font(.title)
+                                .bold()
+                            Text("Используйте учетную запись для сохранения всей своей торговой статистике и доступа к уникальным функциям приложения!")
+                                .padding(.top, 2)
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                        .multilineTextAlignment(.center)
+                        
+                        Spacer()
+                        
+                        VStack(spacing: 10) {
+                            CustomTextEdit(placeholder: "Электронная почта", text: $email)
+                            CustomTextEdit(placeholder: "Пароль", text: $password)
+                            CustomTextEdit(placeholder: "Повторите пароль", text: $repeatPassword)
+                        }
+                        
+                        Button {
+                            
+                        } label: {
+                            Text("Создать учетную запись")
+                                .font(.title3)
+                                .foregroundColor(Color(.systemBackground))
+                                .padding()
+                                .background {
+                                    Capsule()
+                                        .fill(Color(.label))
+                                }
+                        }
+                        .buttonStyle(ScaleButtonStyle())
+                        .padding(.top)
+                        
+                        Spacer()
+                        
+                        Button {
+                            showingPolicySheet.toggle()
+                        } label: {
+                            Text("Политика конфиденциальности")
+                                .font(.subheadline)
+                        }
+                    }
+                    .padding()
+                    .frame(minHeight: geometry.size.height)
+                }
+                .frame(width: geometry.size.width)
+                .scrollIndicators(.hidden)
+            }
 		}
 		.sheet(isPresented: $showingPolicySheet) {
 			PrivacyPolicySheet()
